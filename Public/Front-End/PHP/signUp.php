@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="signUp.css">
+<link rel="stylesheet" href="CSS/style.css">
 <form action="action_page.php" style="border:1px solid #ccc">
     <div class="container">
       <h1>Sign Up</h1>
@@ -27,8 +27,8 @@
       <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
   
       <div class="clearfix">
-        <button type="button" class="cancelbtn">Cancel</button>
-        <button type="submit" class="signupbtn">Sign Up</button>
+        <button href="index.php" type="button" class="cancelbtn">Cancel</button>
+        <button href="database.sql" type="submit" class="signupbtn">Sign Up</button>
       </div>
     </div>
   </form>

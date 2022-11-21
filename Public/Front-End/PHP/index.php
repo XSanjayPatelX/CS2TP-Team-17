@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Health Care Website</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="CSS/style.css">
 
     <link rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
@@ -14,24 +14,42 @@
 </head>
 <body>
     <header>
-        <a href="#" class="logo"><img src="img/logo.png" alt=""></a>
+        <a href="#" class="logo"><img src="E-Commerce-Designs/Logos/logo.png" alt=""></a>
 
         <div class="bx bx-menu" id="menu-icon"></div>
 
         <ul class="navbar">
             <li><a href="#home">Home</a></li>
             <li><a href="#services">Services</a></li>
-            <li><a href="#products">Products</a></li>
+            <li><a href="#shopContainer">Products</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#contactUs">Contact Us</a></li>
         </ul>
         <div class="header-btn">
-            <a href="signUp.php" class="sign-up">Sign Up</a>
+            <a href="signUp.php" class="sign-up" id="sign-up">Sign Up</a>
             <a href="signIn.php" class="sign-in">Sign In</a>
-            <a href="basket.php" class="basket"><img src="img/basket.png" alt=""></a>
+
+            <i class='bx bx-shopping-bag' id="cart-icon"></i>
+            <div class="cart" id="cart">
+                <h2 class="cart-title">Your Cart</h2>
+                <div class="cart-content">
+
+                </div>
+
+                <div class="total">
+                    <div class="total-title">Total</div>
+                    <div class="total-price">£0</div>
+                </div>
+
+                <button type="button" class="btn-buy">Buy Now</button>
+
+                <i class='bx bx-x' id="close-cart"></i>
+            </div>
         </div>
         
     </header>
+
+
     <section class="home" id="home">
         <div class="text">
             <h1><span>Health Care </span> on <br>your finger tips</h1>
@@ -48,20 +66,20 @@
 
     <div class="services-container">
         <div class="box">
-            <a href="#signUp.php" class='bx bx-pen'></a>
+            <a href="#sign-up" class='bx bx-pen'></a>
             <h2>Join Us</h2>
             <p>Join Our Website To always Be A Part Of Us And Take Advantage Of Our ExclusIve Deals And Offers </p>
         </div>
         
         <div class="box">
-            <a href="#products" class='bx bx-search-alt'></a>
+            <a href="#shopContainer" class='bx bx-search-alt'></a>
             <h2>Search For Your Product</h2>
             <p>Choose across a wide rnge of healthcare products that best suits your desire and health</p>
         </div>
 
 
         <div class="box">
-            <a href="#basket.php" class='bx bx-basket'></a>
+            <a href="#cart" class='bx bx-basket'></a>
             <h2>Make your basket</h2>
             <p>Create Your Basket Just By Selecting The Products Of Your Need And Checkout</p>
         </div>
@@ -69,119 +87,72 @@
     </div>
 </section>
 
+<section class="shopContainer" id="shopContainer">
+    <h2 class="section-title">Shop Products</h2>
 
-<secttion class="products" id="products">
-        <div class="heading">
-            <span>Best Products</span>
-            <h1>Explore Out Top Deals <br> On All Our Health Care Protucts</h1>
+    <div class="shop-content">
+        <div class="product-box">
+            <img src="E-Commerce-Designs/Products/P1.PNG" alt="" class="product-img">
+            <h2 class="product-title">Daily skin care kit</h2>
+            <span class="price">£45</span>
+            <i class='bx bx-shopping-bag add-cart'></i>
         </div>
-        <div class="products-container">
-            <div class="box">
-                <div class="box-img">
-                    <img src="img/P1.jpeg" alt="">
-                </div>
-                <p>Skin Care</p>
-                <P>Product ID: P1</P> 
-                <h3>Face Foundation</h3>
-                <h2> Price: <span>15£</span></h2>
-                <h2> Quantity</h2>
-                <input type="number" class="inputbox" name="Quantity" id="No" paceholder="No of products" required>
-                <a href="#database.sql" class="btn">Add To Cart</a>
-            </div>
 
-            <div class="box">
-                <div class="box-img">
-                    <img src="img/P2.jpeg" alt="">
-                </div>
-                <p>Skin Care</p>
-                <P>Product ID: P2</P> 
-                <h3>Face Mask</h3>
-                <h2> Price: <span>8£</span></h2>
-                <h2> Quantity</h2>
-                <input type="number" class="inputbox" name="Quantity" id="No" paceholder="No of products" required>
-                <a href="#database.sql" class="btn">Add To Cart</a>
-            </div>
-
-            <div class="box">
-                <div class="box-img">
-                    <img src="img/Pr3.jpeg" alt="">
-                </div>
-                <p>Medicines</p>
-                <P>Product ID: P3</P> 
-                <h3>Cough Syrup</h3>
-                <h2> Price: <span>4£</span></h2>
-                <h2> Quantity</h2>
-                <input type="number" class="inputbox" name="Quantity" id="No" paceholder="No of products" required>
-                <a href="#database.sql" class="btn">Add To Cart</a>
-            </div>
-
-            <div class="box">
-                <div class="box-img">
-                    <img src="img/P4.jpeg" alt="">
-                </div>
-                <p>Medicines</p>
-                <P>Product ID: P4</P> 
-                <h3>Paracetamol</h3>
-                <h2> Price: <span>3£</span></h2>
-                <h2> Quantity</h2>
-                <input type="number" class="inputbox" name="Quantity" id="No" paceholder="No of products" required>
-                <a href="#database.sql" class="btn">Add To Cart</a>
-            </div>
-
-            <div class="box">
-                <div class="box-img">
-                    <img src="img/P5.jpeg" alt="">
-                </div>
-                <p>Dental Care</p>
-                <P>Product ID: P5</P> 
-                <h3>Mouth Freshner</h3>
-                <h2> Price: <span>5£</span></h2>
-                <h2> Quantity</h2>
-                <input type="number" class="inputbox" name="Quantity" id="No" paceholder="No of products" required>
-                <a href="#database.sql" class="btn">Add To Cart</a>
-            </div>
-
-            <div class="box">
-                <div class="box-img">
-                    <img src="img/P6.jpeg" alt="">
-                </div>
-                <p>Dental Care</p>
-                <P>Product ID: P6</P> 
-                <h3>Electric Toothrush</h3>
-                <h2> Price: <span>25£</span></h2>
-                <h2> Quantity</h2>
-                <input type="number" class="inputbox" name="Quantity" id="No" paceholder="No of products" required>
-                <a href="#database.sql" class="btn">Add To Cart</a>
-            </div>
-
-            <div class="box">
-                <div class="box-img">
-                    <img src="img/P7.jpeg" alt="">
-                </div>
-                <p>Hair Care</p>
-                <P>Product ID: P7</P> 
-                <h3>Shampoo & Conditioner</h3>
-                <h2> Price: <span>18£</span></h2>
-                <h2> Quantity</h2>
-                <input type="number" class="inputbox" name="Quantity" id="No" paceholder="No of products" required>
-                <a href="#database.sql" class="btn">Add To Cart</a>
-            </div>
-
-            <div class="box">
-                <div class="box-img">
-                    <img src="img/P8.jpeg" alt="">
-                </div>
-                <p>Instrumentals</p>
-                <P>Product ID: P8</P> 
-                <h3>Smart Health Wear</h3>
-                <h2> Price: <span>30£</span></h2>
-                <h2> Quantity</h2>
-                <input type="number" class="inputbox" name="Quantity" id="No" paceholder="No of products" required>
-                <a href="#database.sql" class="btn">Add To Cart</a>
-            </div>
-                   
+        <div class="product-box">
+            <img src="E-Commerce-Designs/Products/P2.PNG" alt="" class="product-img">
+            <h2 class="product-title">Anti wrinkle cream</h2>
+            <span class="price">£10</span>
+            <i class='bx bx-shopping-bag add-cart'></i>
         </div>
-    </secttion>
+
+        <div class="product-box">
+            <img src="E-Commerce-Designs/Products/P3.PNG" alt="" class="product-img">
+            <h2 class="product-title">Insulin pump</h2>
+            <span class="price">£20</span>
+            <i class='bx bx-shopping-bag add-cart'></i>
+        </div>
+
+        <div class="product-box">
+            <img src="E-Commerce-Designs/Products/P4.PNG" alt="" class="product-img">
+            <h2 class="product-title">After shave</h2>
+            <span class="price">£14</span>
+            <i class='bx bx-shopping-bag add-cart'></i>
+        </div>
+
+        <div class="product-box">
+            <img src="E-Commerce-Designs/Products/P5.PNG" alt="" class="product-img">
+            <h2 class="product-title">Bottle of shampoo</h2>
+            <span class="price">£6</span>
+            <i class='bx bx-shopping-bag add-cart'></i>
+        </div>
+
+        <div class="product-box">
+            <img src="E-Commerce-Designs/Products/P6.PNG" alt="" class="product-img">
+            <h2 class="product-title">Perfume</h2>
+            <span class="price">£25</span>
+            <i class='bx bx-shopping-bag add-cart'></i>
+        </div>
+
+        <div class="product-box">
+            <img src="E-Commerce-Designs/Products/P7.PNG" alt="" class="product-img">
+            <h2 class="product-title">Thermometer</h2>
+            <span class="price">£12</span>
+            <i class='bx bx-shopping-bag add-cart'></i>
+        </div>
+
+        <div class="product-box">
+            <img src="E-Commerce-Designs/Products/P8.PNG" alt="" class="product-img">
+            <h2 class="product-title">White face mask</h2>
+            <span class="price">1</span>
+            <i class='bx bx-shopping-bag add-cart'></i>
+        </div>
+
+        
+    </div>
+</section>
+
+<script src="JS/main.js"></script>
+
 
     <section class="about" id="about">
             <div class="about-text">
@@ -232,66 +203,66 @@
         <div class="team-container">
             <div class="box">
                 <div class="team-img">
-                    <img src="img/sanjay.jpg" alt="">
+                    <img src="E-Commerce-Designs/Images/sanjay.jpg" alt="">
                 </div>
                 <h2>Sanjay Patel</h2>
-                <p></p>
+                <p>Team leader and backend developer</p>
             </div>
 
             <div class="box">
                 <div class="team-img">
-                    <img src="img/han.jpg" alt="">
+                    <img src="E-Commerce-Designs/Images/han.jpg" alt="">
                 </div>
                 <h2>Hans Raj</h2>
-                <p>Worked hard along with the team to create a responsive, easy to use and eye catching website</p>
+                <p>Front-end developer, worked hard along with the team to create a responsive, easy to use and eye catching website</p>
             </div>
 
             <div class="box">
                 <div class="team-img">
-                    <img src="img/divean.jpg" alt="">
+                    <img src="E-Commerce-Designs/Images/divean.jpg" alt="">
                 </div>
                 <h2>Dieven Chort</h2>
-                <p></p>
+                <p>Database developer, responsible for customer's and product's data</p>
             </div>
 
             <div class="box">
                 <div class="team-img">
-                    <img src="img/zuhaib.jpg" alt="">
+                    <img src="E-Commerce-Designs/Images/zuhaib.jpg" alt="">
                 </div>
                 <h2>Zuhaib Hussain</h2>
-                <p>Helped with front-end and organization of the website</p>
+                <p>Front-end developer, helped with front-end and organization of the website</p>
             </div>
 
             <div class="box">
                 <div class="team-img">
-                    <img src="img/dalvir.jpg" alt="">
+                    <img src="E-Commerce-Designs/Images/dalvir.jpg" alt="">
                 </div>
                 <h2>Dalvir Janagel</h2>
-                <p></p>
+                <p>Database developer, responsible to create database for the website</p>
             </div>
 
             <div class="box">
                 <div class="team-img">
-                    <img src="img/arshi.jpg" alt="">
+                    <img src="E-Commerce-Designs/Images/arshi.jpg" alt="">
                 </div>
                 <h2>Arshdeep Kaur</h2>
-                <p></p>
+                <p>Back-end developer, for connecting css and php files with database </p>
             </div>
 
             <div class="box">
                 <div class="team-img">
-                    <img src="img/alex.jpg" alt="">
+                    <img src="E-Commerce-Designs/Images/alex.jpg" alt="">
                 </div>
                 <h2>Alexander Onofrio-Mills</h2>
-                <p></p>
+                <p>Back-end developer, for makeing the website functional</p>
             </div>
 
             <div class="box">
                 <div class="team-img">
-                    <img src="img/rav.jpg" alt="">
+                    <img src="E-Commerce-Designs/Images/rav.jpg" alt="">
                 </div>
                 <h2>Ravjot Kaur</h2>
-                <p></p>
+                <p>Front-end developer, for suggesting and managing the design for the website</p>
             </div>
 
             
