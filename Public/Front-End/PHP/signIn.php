@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="CSS/style.css">
+<link rel="stylesheet" href="../CSS/style.css">
 <form action="action_page.php" method="post">
     
     <div class="container">
