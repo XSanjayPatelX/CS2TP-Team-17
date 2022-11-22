@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Health Care Website</title>
 
-    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="../CSS/style.css">
 
     <link rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
@@ -14,7 +14,7 @@
 </head>
 <body>
     <header>
-        <a href="#" class="logo"><img src="E-Commerce-Designs/Logos/logo.png" alt=""></a>
+        <a href="#" class="logo"><img src="../E-Commerce-Designs/Logos/logo.png" alt=""></a>
 
         <div class="bx bx-menu" id="menu-icon"></div>
 
@@ -92,56 +92,56 @@
 
     <div class="shop-content">
         <div class="product-box">
-            <img src="E-Commerce-Designs/Products/P1.PNG" alt="" class="product-img">
+            <img src="../E-Commerce-Designs/Products/P1.PNG" alt="" class="product-img">
             <h2 class="product-title">Daily skin care kit</h2>
             <span class="price">£45</span>
             <i class='bx bx-shopping-bag add-cart'></i>
         </div>
 
         <div class="product-box">
-            <img src="E-Commerce-Designs/Products/P2.PNG" alt="" class="product-img">
+            <img src="../E-Commerce-Designs/Products/P2.PNG" alt="" class="product-img">
             <h2 class="product-title">Anti wrinkle cream</h2>
             <span class="price">£10</span>
             <i class='bx bx-shopping-bag add-cart'></i>
         </div>
 
         <div class="product-box">
-            <img src="E-Commerce-Designs/Products/P3.PNG" alt="" class="product-img">
+            <img src="../E-Commerce-Designs/Products/P3.PNG" alt="" class="product-img">
             <h2 class="product-title">Insulin pump</h2>
             <span class="price">£20</span>
             <i class='bx bx-shopping-bag add-cart'></i>
         </div>
 
         <div class="product-box">
-            <img src="E-Commerce-Designs/Products/P4.PNG" alt="" class="product-img">
+            <img src="../E-Commerce-Designs/Products/P4.PNG" alt="" class="product-img">
             <h2 class="product-title">After shave</h2>
             <span class="price">£14</span>
             <i class='bx bx-shopping-bag add-cart'></i>
         </div>
 
         <div class="product-box">
-            <img src="E-Commerce-Designs/Products/P5.PNG" alt="" class="product-img">
+            <img src="../E-Commerce-Designs/Products/P5.PNG" alt="" class="product-img">
             <h2 class="product-title">Bottle of shampoo</h2>
             <span class="price">£6</span>
             <i class='bx bx-shopping-bag add-cart'></i>
         </div>
 
         <div class="product-box">
-            <img src="E-Commerce-Designs/Products/P6.PNG" alt="" class="product-img">
+            <img src="../E-Commerce-Designs/Products/P6.PNG" alt="" class="product-img">
             <h2 class="product-title">Perfume</h2>
             <span class="price">£25</span>
             <i class='bx bx-shopping-bag add-cart'></i>
         </div>
 
         <div class="product-box">
-            <img src="E-Commerce-Designs/Products/P7.PNG" alt="" class="product-img">
+            <img src="../E-Commerce-Designs/Products/P7.PNG" alt="" class="product-img">
             <h2 class="product-title">Thermometer</h2>
             <span class="price">£12</span>
             <i class='bx bx-shopping-bag add-cart'></i>
         </div>
 
         <div class="product-box">
-            <img src="E-Commerce-Designs/Products/P8.PNG" alt="" class="product-img">
+            <img src="../E-Commerce-Designs/Products/P8.PNG" alt="" class="product-img">
             <h2 class="product-title">White face mask</h2>
             <span class="price">1</span>
             <i class='bx bx-shopping-bag add-cart'></i>
@@ -151,7 +151,7 @@
     </div>
 </section>
 
-<script src="JS/main.js"></script>
+<script src="../JS/main.js"></script>
 
 
     <section class="about" id="about">
@@ -203,7 +203,7 @@
         <div class="team-container">
             <div class="box">
                 <div class="team-img">
-                    <img src="E-Commerce-Designs/Images/sanjay.jpg" alt="">
+                    <img src="../E-Commerce-Designs/Images/sanjay.jpg" alt="">
                 </div>
                 <h2>Sanjay Patel</h2>
                 <p>Team leader and backend developer</p>
@@ -211,7 +211,7 @@
 
             <div class="box">
                 <div class="team-img">
-                    <img src="E-Commerce-Designs/Images/han.jpg" alt="">
+                    <img src="../E-Commerce-Designs/Images/han.jpg" alt="">
                 </div>
                 <h2>Hans Raj</h2>
                 <p>Front-end developer, worked hard along with the team to create a responsive, easy to use and eye catching website</p>
@@ -219,7 +219,7 @@
 
             <div class="box">
                 <div class="team-img">
-                    <img src="E-Commerce-Designs/Images/divean.jpg" alt="">
+                    <img src="../E-Commerce-Designs/Images/divean.jpg" alt="">
                 </div>
                 <h2>Dieven Chort</h2>
                 <p>Database developer, responsible for customer's and product's data</p>
@@ -227,7 +227,7 @@
 
             <div class="box">
                 <div class="team-img">
-                    <img src="E-Commerce-Designs/Images/zuhaib.jpg" alt="">
+                    <img src="../E-Commerce-Designs/Images/zuhaib.jpg" alt="">
                 </div>
                 <h2>Zuhaib Hussain</h2>
                 <p>Front-end developer, helped with front-end and organization of the website</p>
@@ -235,7 +235,7 @@
 
             <div class="box">
                 <div class="team-img">
-                    <img src="E-Commerce-Designs/Images/dalvir.jpg" alt="">
+                    <img src="../E-Commerce-Designs/Images/dalvir.jpg" alt="">
                 </div>
                 <h2>Dalvir Janagel</h2>
                 <p>Database developer, responsible to create database for the website</p>
@@ -243,7 +243,7 @@
 
             <div class="box">
                 <div class="team-img">
-                    <img src="E-Commerce-Designs/Images/arshi.jpg" alt="">
+                    <img src="../E-Commerce-Designs/Images/arshi.jpg" alt="">
                 </div>
                 <h2>Arshdeep Kaur</h2>
                 <p>Back-end developer, for connecting css and php files with database </p>
@@ -251,7 +251,7 @@
 
             <div class="box">
                 <div class="team-img">
-                    <img src="E-Commerce-Designs/Images/alex.jpg" alt="">
+                    <img src="../E-Commerce-Designs/Images/alex.jpg" alt="">
                 </div>
                 <h2>Alexander Onofrio-Mills</h2>
                 <p>Back-end developer, for makeing the website functional</p>
@@ -259,7 +259,7 @@
 
             <div class="box">
                 <div class="team-img">
-                    <img src="E-Commerce-Designs/Images/rav.jpg" alt="">
+                    <img src="../E-Commerce-Designs/Images/rav.jpg" alt="">
                 </div>
                 <h2>Ravjot Kaur</h2>
                 <p>Front-end developer, for suggesting and managing the design for the website</p>
