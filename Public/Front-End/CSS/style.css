@@ -263,6 +263,12 @@ header{
     font-weight: 500;
     margin: 1.4rem 0 0.5rem;
 }
+.services-container .box p{
+    color: #FFF;
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 1.4rem 0 0.5rem;
+}
 .services-container .box .bx:hover, 
 .services-container .box .bx-search-alt {
     background: var(--gradient);

@@ -74,7 +74,7 @@
         <div class="box">
             <a href="#shopContainer" class='bx bx-search-alt'></a>
             <h2>Search For Your Product</h2>
-            <p>Choose across a wide rnge of healthcare products that best suits your desire and health</p>
+            <p>Choose across a wide range of healthcare products that best suits your desire and health</p>
         </div>
 
 
