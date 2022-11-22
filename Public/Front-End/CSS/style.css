@@ -231,10 +231,12 @@ header{
     text-align: center;
 }
 .heading span{
+    color: #FFF;
     font-weight: 500;
     text-transform: uppercase;
 }
 .heading h1 {
+    color: #FFF;
     font-size: 2rem;
 }
 .services-container{
@@ -256,6 +258,7 @@ header{
     color: var(--main-color);
 }
 .services-container .box h2{
+    color: #FFF;
     font-size: 1.3rem;
     font-weight: 500;
     margin: 1.4rem 0 0.5rem;
