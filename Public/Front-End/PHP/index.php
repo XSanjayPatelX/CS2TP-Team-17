@@ -143,7 +143,7 @@
         <div class="product-box">
             <img src="../E-Commerce-Designs/Products/P8.PNG" alt="" class="product-img">
             <h2 class="product-title">White face mask</h2>
-            <span class="price">1</span>
+            <span class="price">£1</span>
             <i class='bx bx-shopping-bag add-cart'></i>
         </div>
 
