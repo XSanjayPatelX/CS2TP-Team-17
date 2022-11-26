@@ -92,56 +92,56 @@
 
     <div class="shop-content">
         <div class="product-box">
-            <img src="../E-Commerce-Designs/Products/P1.PNG" alt="" class="product-img">
+            <img src="../E-Commerce-Designs/Products/P1.PNG" alt="" style="width: 220px; height: 180px;" class="product-img">
             <h2 class="product-title">Daily skin care kit</h2>
             <span class="price">£45</span>
             <i class='bx bx-shopping-bag add-cart'></i>
         </div>
 
         <div class="product-box">
-            <img src="../E-Commerce-Designs/Products/P2.PNG" alt="" class="product-img">
+            <img src="../E-Commerce-Designs/Products/P2.PNG" alt="" style="width: 220px; height: 180px;" class="product-img">
             <h2 class="product-title">Anti wrinkle cream</h2>
             <span class="price">£10</span>
             <i class='bx bx-shopping-bag add-cart'></i>
         </div>
 
         <div class="product-box">
-            <img src="../E-Commerce-Designs/Products/P3.PNG" alt="" class="product-img">
+            <img src="../E-Commerce-Designs/Products/P3.PNG" alt="" style="width: 220px; height: 180px;"  class="product-img">
             <h2 class="product-title">Insulin pump</h2>
             <span class="price">£20</span>
             <i class='bx bx-shopping-bag add-cart'></i>
         </div>
 
         <div class="product-box">
-            <img src="../E-Commerce-Designs/Products/P4.PNG" alt="" class="product-img">
+            <img src="../E-Commerce-Designs/Products/P4.PNG" alt="" style="width: 220px; height: 180px;"  class="product-img">
             <h2 class="product-title">After shave</h2>
             <span class="price">£14</span>
             <i class='bx bx-shopping-bag add-cart'></i>
         </div>
 
         <div class="product-box">
-            <img src="../E-Commerce-Designs/Products/P5.PNG" alt="" class="product-img">
+            <img src="../E-Commerce-Designs/Products/P5.PNG" alt="" style="width: 220px; height: 180px;" class="product-img">
             <h2 class="product-title">Bottle of shampoo</h2>
             <span class="price">£6</span>
             <i class='bx bx-shopping-bag add-cart'></i>
         </div>
 
         <div class="product-box">
-            <img src="../E-Commerce-Designs/Products/P6.PNG" alt="" class="product-img">
+            <img src="../E-Commerce-Designs/Products/P6.PNG" alt="" style="width: 220px; height: 180px;"class="product-img">
             <h2 class="product-title">Perfume</h2>
             <span class="price">£25</span>
             <i class='bx bx-shopping-bag add-cart'></i>
         </div>
 
         <div class="product-box">
-            <img src="../E-Commerce-Designs/Products/P7.PNG" alt="" class="product-img">
+            <img src="../E-Commerce-Designs/Products/P7.PNG" alt="" style="width: 220px; height: 180px;"  class="product-img">
             <h2 class="product-title">Thermometer</h2>
             <span class="price">£12</span>
             <i class='bx bx-shopping-bag add-cart'></i>
         </div>
 
         <div class="product-box">
-            <img src="../E-Commerce-Designs/Products/P8.PNG" alt="" class="product-img">
+            <img src="../E-Commerce-Designs/Products/P8.PNG" alt="" style="width: 220px; height: 180px;"  class="product-img">
             <h2 class="product-title">White face mask</h2>
             <span class="price">£1</span>
             <i class='bx bx-shopping-bag add-cart'></i>

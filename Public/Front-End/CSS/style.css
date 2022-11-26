@@ -280,7 +280,7 @@ header{
 .shopContainer {
     align-items: center;
     padding: 4rem 0 0rem;
-    width: 70%;
+    width: 100%;
 }
 
 .section-title {
@@ -296,7 +296,7 @@ header{
 }
 .shop-content{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, auto));
+    grid-template-columns: repeat(auto-fit, minmax(300px, auto));
     gap: 1,5rem;
     justify-items: center;
     justify-content: center;
