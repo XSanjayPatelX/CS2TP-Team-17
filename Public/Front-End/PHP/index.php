@@ -1,3 +1,7 @@
+<?php
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -7,10 +11,8 @@
         <title>Health Care Website</title>
 
         <link rel="stylesheet" href="../CSS/style.css">
-        <script src="../JS/main.js"></script>
 
-        <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
     </head>
 
     <body>
@@ -139,6 +141,8 @@
                 </div>
             </div>
         </section>
+
+        <script src="../JS/main.js"></script>
 
         <section class="about" id="about">
             <div class="about-text">
