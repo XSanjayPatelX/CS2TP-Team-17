@@ -277,18 +277,18 @@ header{
 }
 
 
-.shopContainer {
-    align-items: center;
-    padding: 4rem 0 0rem;
-    width: 70%;
+.shopContainer{
+    padding: 4rem 0 3rem;
+    grid-template-columns: repeat(auto-fit,minmax(250px,auto));
+    gap: 1rem;
+    margin-top: 2rem;
 }
 
-.section-title {
-    text-align: center;
-    font-size: 3.5rem;
+.section-title{
+    font-size: 1.5rem;
     font-weight: 600;
-    text-align: center;
-    margin-bottom: 1,5rem;  
+    text-align: center;  
+    margin-bottom: 1.5rem;
 }
 
 .shop{
@@ -298,12 +298,15 @@ header{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, auto));
     gap: 1,5rem;
-    justify-items: center;
-    justify-content: center;
-    align-content: stretch;
-    align-items: baseline;
 }
 .product-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 1px 4px 41px rgba(0,0,0,0.1);
+    border-radius: 0.5rem;
     position: relative;
 }
 .product-box:hover{
@@ -312,19 +315,28 @@ header{
     transition: 0.4s;
 }
 .product-img{
-    width: 70%;
+    width: 100%;
     height: auto;
-    margin-bottom: 1.5rem;
-}
-.product-title{
-    font-size: 1.1rem;
-    font-weight: 600;
-    text-transform: uppercase;
     margin-bottom: 0.5rem;
 }
-.price{
-    font-weight: 500;
+.shampoo-img{
+    width: 120px;
+    margin-bottom: 0.5rem;
 }
+.perfume-img{
+    width: 175px;
+    margin-bottom: 0.5rem;
+}
+.product-title-price{
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 0.5rem;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+}
+
 .add-cart{
     position: absolute;
     bottom: 0;
@@ -393,7 +405,7 @@ header{
 }
 .input-box span{
     font-weight: 500;
-    color: #FFF;
+    color: white;
 }
 .input-box input{
     padding: 7px;
@@ -405,7 +417,7 @@ header{
 }
 .input-boxtext span{
     font-weight: 500;
-    color: #FFF;
+    color: white;
 }
 .input-boxtext input{
     padding: 40px;
@@ -458,12 +470,13 @@ header{
     text-align: center;
     padding: 20px;
     box-shadow: 1px 4px 41px rgba(0,0,0,0.1);
-    border-radius: o.5rem;
+    border-radius: 0.5rem;
 }
 .team-container .box h2{
     font-size: 1.1rem;
     font-weight: 600;
     margin: 0.5rem 0 0.5rem;
+    color: white;
 }
 .team-container .box p{
     font-style: italic;
@@ -475,9 +488,65 @@ header{
 /* sign in page */
 
 * {box-sizing: border-box}
+  input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    }
+
+
+    .button {
+    background-color: #04AA6D;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    }
+
+
+    .button:hover {
+    opacity: 0.8;
+    }
+
+
+    .cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+    }
+
+    .container {
+    padding: 16px;
+    }
+
+
+    .span.psw {
+    float: right;
+    padding-top: 16px;
+    }
+
+
+    @media screen and (max-width: 300px) {
+    span.psw {
+        display: block;
+        float: none;
+    }
+    .cancelbtn {
+        width: 100%;
+    }
+    }
+
+
+/* sign in page */
+
+* {box-sizing: border-box}
 form {
     height: 100%;
-    border: 3px solid var(--second-color);
 }
 
 .container-signIn{
@@ -490,6 +559,7 @@ form {
     color: #FFF;
     align-items: center;
 }
+
   .container-signIn p{
     text-align: center;
     color: #FFF;
@@ -506,7 +576,6 @@ hr {
     color: #FFF;
     align-items: center;
 }
-  
  
 .container-sign-in [type=text], input[type=password] {
     text-align: center;
@@ -518,7 +587,6 @@ hr {
     border: 1px solid #ccc;
     box-sizing: border-box;
 }
-  
 
 .button-signIn .button {
     align-items: center;
@@ -535,13 +603,11 @@ hr {
     width: auto;
     padding: 10px 18px;
     background-color: #14a32c;
-}
-  
+} 
   
 .button-signIn .button:hover {
     opacity: 0.8;
 }
-  
   
 .button-signIn .cancelbtn {
     align-items: center;
@@ -555,7 +621,6 @@ hr {
     padding-top: 16px;
 }
   
- 
 @media screen and (max-width: 300px) {
     span.psw {
       display: block;
@@ -565,8 +630,6 @@ hr {
       width: 50%;
     }
 }
-
-
 
 /* sign up */
   * {box-sizing: border-box}
@@ -592,7 +655,6 @@ hr {
   margin-bottom: 25px;
 }
 
-
 button {
   background-color: #04AA6D;
   color: white;
@@ -608,23 +670,20 @@ button:hover {
   opacity:1;
 }
 
-
 .cancelbtn {
   padding: 14px 20px;
   background-color:#143aa3 ;
 }
 
-
 .cancelbtn, .signupbtn {
   float: left;
-  width: 50%;
 }
-
 
 .container {
     padding: 108px;
     background:#596fb8;
 }
+
 .container h1{
     text-align: center;
     color: #FFF;
@@ -641,8 +700,6 @@ button:hover {
     align-items: center;
     color: #FFF;
 }
-
-
 
 .clearfix::after {
   align-items:center ;
