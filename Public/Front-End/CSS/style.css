@@ -266,7 +266,7 @@ header{
 
 .heading span{
     color: #FFF;
-    font-weight: 500;
+    font-weight: 600;
     text-transform: uppercase;
 }
 
@@ -446,7 +446,6 @@ header{
     position: absolute;
     bottom: 4rem;
     left: 100px;
-    background: #FFF;
     padding: 20px;
     border-radius: 2rem;
 }
@@ -485,21 +484,10 @@ header{
     font-size: 1rem;
 }
 
-.form-container form .btn{
-    flex: 1 1 7rem;
-    padding: 10px 34px;
-    border: none;
-    border-radius: 0.5rem;
-    background: #143aa3;
-    color: #FFF;
-    font-size: 1rem;
-    font-weight: 500;
+.contactUs.form-container table, th, td {
+    text-align: center;
+    color: white;
 }
-
-.form-container form .btn:hover {
-    background: var(--second-color);
-}
-
 
 .team{
     background: var(--gradient);

@@ -37,7 +37,6 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
         exit;
       }
     }
-
     echo "Wrong email or password!";
   } else {
     echo "Enter valid information!";

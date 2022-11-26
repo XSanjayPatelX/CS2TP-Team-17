@@ -67,7 +67,7 @@
 
             <div class="services-container">
                 <div class="box">
-                    <a href="#sign-up" class='bx bx-pen'></a>
+                    <a href="signUp.php" class='bx bx-pen'></a>
                     <h2>Join Us</h2>
                     <p>Join Our Website To always Be A Part Of Us And Take Advantage Of Our ExclusIve Deals And Offers </p>
                 </div>
@@ -155,33 +155,29 @@
 
         <section class="contactUs" id="contactUs">
             <div class="heading">
-                <span>Contact Us</span>
+                <span>Contact Us</span> <br> <br>
             </div>
 
             <div class="form-container">
-                <form action="">
-                    <div class="input-box">
-                        <span>Name</span>
-                        <input type="text" name="" id="" placeholder="Customer's Name">
-                    </div>
+                <table style="width: 100%;">
+                    <tr>
+                        <div class="input-box">
+                            <th><span>Name</span></th>
+                            <th><span>Address</span></th>
+                            <th><span>Email</span></th>
+                            <th><span>Phone Number</span></th>
+                        </div>
+                    </tr>
 
-                    <div class="input-box">
-                        <span>Email Adress</span>
-                        <input type="text" name="" id="" placeholder="Customer's Email">
-                    </div>
-
-                    <div class="input-box">
-                        <span>Phone Number</span>
-                        <input type="text" name="" id="" placeholder="Customer's Phone Number">
-                    </div>
-
-                    <div class="input-boxtext">
-                        <span>What Can We Help You With ?</span>
-                        <input type="text" name="" id="" placeholder="">
-                    </div>
-
-                    <li><a input type="submit" href="#database.sql" name="" id="" class="btn">Submit</a></li>
-                </form>
+                    <tr>
+                        <div class="input-box">
+                            <td><span>Well Health Care+</span></td>
+                            <td><span>Aston St, Birmingham, B4 7ET</span></td>
+                            <td><span>thehub@aston.ac.uk</span></td>
+                            <td><span>0121 204 3000</span></td>
+                        </div>
+                    </tr>
+                </table>
             </div>
         </section>
 

@@ -7,7 +7,6 @@ $password = "";
 $passwordrep = "";
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
-
   $email = $_POST['email'];
   if (!preg_match("/^[\w\-]+@[\w\-]+.[\w\-]+$/", $email)) {
 
@@ -19,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
   $password = specialchar($_POST['password']);
   $passwordrep = specialchar($_POST['passwordrep']);
   
-  // Check if username already exists
+  // Check if username already exists and the passwords are matching
   $arr = false;
   $arr['email'] = $email;
   $query = "SELECT * FROM login_details WHERE email = :email LIMIT 1";
