@@ -1,0 +1,33 @@
+<div class="product-box">
+    <h2 class="product-title-price"><?php echo $row["product"]; ?></h2>
+    <h2 class="product-title-price"><?php echo $row["product_description"]; ?></h2>
+    <h2 class="product-title-price"><?php echo $row["size"]; ?></h2>
+    <h2 class="product-title-price"><?php echo $row["price"]; ?></h2>
+    <img src="../E-Commerce-Designs/Products/<?php echo $row["image"]; ?>" alt="" class="product-img">
+    <h2 class="product-title-price"><?php echo $row["quantity"]; ?></h2>
+    <i class='bx bx-shopping-bag add-cart'></i>
+</div>
+
+<div class="shop-content">
+                <?php
+                $sql = "SELECT product, price, images FROM products";
+                $result = $conn->query($sql);
+
+                while($row = $result->fetch_assoc()) { ?>
+                    <div class="product-box">
+                        <table style="width: 100%;">
+                            <tr>
+                                <div class="input-box">
+                                    <tr>
+                                        <th><h2 class="product-title-price"><?php echo $row["product"]; ?></h2></th>
+                                    </tr>
+                                    <tr>
+                                        <td><h2 class="product-title-price"><?php echo $row["price"]; ?></h2></td>
+                                    </tr>
+                                    <th><i class='bx bx-shopping-bag add-cart'></i></th>
+                                </div>
+                            </tr>
+                        </table>
+                    </div>
+                <?php } ?>
+            </div>

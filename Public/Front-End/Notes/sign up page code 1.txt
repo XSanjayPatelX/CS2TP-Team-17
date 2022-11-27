@@ -1,43 +1,57 @@
 <?php
 require "../../../Private/Back-End/backendcon.php";
 
-//$error = "";
+$error = "";
+$email = "";
+$password = "";
+$passwordrep = "";
 
-if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_SESSION['token']) && isset($_POST['token']) && $_SESSION['token'] == $_POST['token']) {
-  
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
   $email = $_POST['email'];
   if (!preg_match("/^[\w\-]+@[\w\-]+.[\w\-]+$/", $email)) {
-    $error = "Please enter a valid email.";
+
+      $error = "Please enter a valid email.";
+
   }
 
-  $password = $_POST['password'];
+  $email = specialchar($_POST['email']);
+  $password = specialchar($_POST['password']);
+  $passwordrep = specialchar($_POST['passwordrep']);
 
-  if($error == "") {
+  $identifier = individualidentifier(10);
+  
+  // Check if username already exists and the passwords are matching
+  $arr = false;
+  $arr['email'] = $email;
+  $query = "SELECT * FROM login_details WHERE email = :email LIMIT 1";
+  $statement = $DBCONNECT->prepare($query);
+  $checker = $statement->execute($arr);
 
-    $arr['email'] = $email;
-    $arr['password'] = $password;
-
-    //read from database
-    $query = "SELECT * FROM login_details WHERE email = :email && password = :password LIMIT 1";
-    $result = $DBCONNECT->prepare($query);
-    $checker = $result->execute($arr);
-
-    if ($checker) {
-      $datafound = $result->fetchALL(PDO::FETCH_OBJ);
-
-      if (is_array($datafound) && count($datafound) > 0 ) {
-        $datafound = $datafound[0];
-        $_SESSION['identifier'] = $datafound->identifier;
-        $_SESSION['email'] = $datafound->email;
-        
-        header("Location: account.php");
-        exit;
-      }
+  if ($checker) {
+    $datafound = $statement->fetchALL(PDO::FETCH_OBJ);
+    if (is_array($datafound) && count($datafound) > 0) {
+      $error = "This email is already being used by another user.";              
+    }
+    if ($password != $passwordrep) {
+      $error = "The passwords are not matching.";
     }
   }
-  $error = "Wrong email or password, please check your login details.";
+
+  // Putting the data into the database
+  if ($error == "") {
+
+    $arr['identifier'] = $identifier;
+    $arr['email'] = $email;
+    $arr['password'] = $password;
+    
+    $query = "INSERT INTO login_details (identifier, email, password) values (:identifier, :email, :password)";
+    $stm = $DBCONNECT->prepare($query);
+    $stm->execute($arr);
+        
+    header("Location: signin.php");
+    exit;
+  }
 }
-$_SESSION['token'] = individualidentifier(60);
 ?>
 
 
@@ -76,7 +90,6 @@ $_SESSION['token'] = individualidentifier(60);
             <div class="header-btn">
                 <a href="signUp.php" class="sign-up" id="sign-up">Sign Up</a>
                 <a href="signIn.php" class="sign-in">Sign In</a>
-                <a href="">Logout</a>
 
                 <i class='bx bx-shopping-bag' id="cart-icon"></i>
                 <div class="cart" id="cart">
@@ -98,7 +111,7 @@ $_SESSION['token'] = individualidentifier(60);
         </header>
 
     <script src="../JS/main.js"></script>
-
+    
     <form action="" method="POST">
       <?php 
       if (isset($Error) && $Error != "") {
@@ -106,21 +119,26 @@ $_SESSION['token'] = individualidentifier(60);
       } ?>
 
       <div class="container">
-        <h1>Sign In</h1>
-        <p>Please fill in this form to login to your account.</p>
+        <h1>Sign Up</h1>
+        <p>Please fill in this form to create an account.</p>
         <hr>
-
-        <label for="email"><b>Email*</b></label>
-        <input type="text" placeholder="Enter Email" name="email" required>
-
-        <label for="password"><b>Password*</b></label>
+    
+        <label for="email"><b>Email Address*</b></label>
+        <input type="text" placeholder="Enter Email Address" name="email" required>
+    
+        <label for="password"><b>Create Password*</b></label>
         <input type="password" placeholder="Enter Password" name="password" required>
-
-        <input type="hidden" name="token" value="<?=$_SESSION['token']?>">
+    
+        <label for="passwordrep"><b>Repeat Password*</b></label>
+        <input type="password" placeholder="Repeat Password" name="passwordrep" required>
 
         <label>
-          <input type="checkbox" checked="checked" name="remember"> Remember Me
+          <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember Me
         </label>
+
+        <p id="message"></p>
+    
+        <p>By creating an account you agree to our Terms & Privacy</p>
 
         <div class="clearfix">
           <button type="submit" value="submit" class="signupbtn">Sign Up</button>

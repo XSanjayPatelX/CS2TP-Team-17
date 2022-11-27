@@ -1,0 +1,42 @@
+<?php
+$product = "";
+$product_description = "";
+$size = "";
+$price = "";
+$image = "";
+$quantity = "";
+/*
+$product = ($_POST['product']);
+$product_description = ($_POST['product_description']);
+$size = ($_POST['size']);
+$price = ($_POST['price']);
+$image = ($_POST['image']);
+$quantity = ($_POST['quantity']);
+*/
+$arr = false;
+$arr['product'] = $product;
+$arr['product_description'] = $product_description;
+$arr['size'] = $size;
+$arr['price'] = $price;
+$arr['image'] = $image;
+$arr['quantity'] = $quantity;
+
+$prodquery = "SELECT * FROM products WHERE product = :product LIMIT 8";
+$prodstmt = $DBCONNECT -> prepare($prodquery);
+$prodchecks = $prodstmt -> execute($arr);
+
+if ($checker) {
+    $datafound = $statement->fetchALL(PDO::FETCH_OBJ);
+    if (is_array($datafound) && count($datafound) > 0 ) {
+        $datafound = $datafound[0];
+        $_SESSION['product'] = $datafound->product;
+        $_SESSION['product_description'] = $datafound->product_description;
+        $_SESSION['size'] = $datafound->size;
+        $_SESSION['price'] = $datafound->price;
+        $_SESSION['image'] = $datafound->image;
+        $_SESSION['quantity'] = $datafound->quantity;
+        
+    }
+}
+
+?>

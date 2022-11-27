@@ -329,6 +329,7 @@ header{
     font-weight: 600;
     text-align: center;  
     margin-bottom: 1.5rem;
+    margin-top: -50px;
 }
 
 .shop{
@@ -343,13 +344,13 @@ header{
 
 .product-box{
     display: flex;
-    flex-direction: column;
     align-items: center;
     text-align: center;
     padding: 20px;
     box-shadow: 1px 4px 41px rgba(0,0,0,0.1);
     border-radius: 0.5rem;
     position: relative;
+    height: 450px;
 }
 
 .product-box:hover{
@@ -359,19 +360,10 @@ header{
 }
 
 .product-img{
-    width: 100%;
+    width: 120px;
     height: auto;
     margin-bottom: 0.5rem;
-}
-
-.shampoo-img{
-    width: 120px;
-    margin-bottom: 0.5rem;
-}
-
-.perfume-img{
-    width: 175px;
-    margin-bottom: 0.5rem;
+    margin-top: -75px;
 }
 
 .product-title-price{
@@ -379,9 +371,34 @@ header{
     font-weight: 600;
     text-transform: uppercase;
     margin: 0.5rem;
+    bottom: 1;
+    text-align: center;
+    color: black;
+    align-items: center;
+}
+
+.product-size {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 0.5rem;
+    bottom: 1;
+    text-align: center;
+    color: black;
+    align-items: center;
+}
+
+.product-product-desc {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 0.5rem;
     position: absolute;
     bottom: 0;
     text-align: center;
+    align-items: center;
+    color: blue;
+    margin-bottom: 45px;
 }
 
 .add-cart{
@@ -484,7 +501,7 @@ header{
     font-size: 1rem;
 }
 
-.contactUs.form-container table, th, td {
+.contactUs.form-container.input-box table, td, span {
     text-align: center;
     color: white;
 }

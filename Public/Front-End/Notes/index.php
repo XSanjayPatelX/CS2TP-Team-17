@@ -23,18 +23,15 @@ require "../../../Private/Back-End/backendcon.php";
             <div class="bx bx-menu" id="menu-icon"></div>
 
             <ul class="navbar">
-                <li><a href="index.php#home">Home</a></li>
-                <li><a href="index.php#services">Services</a></li>
-                <li><a href="index.php#shopContainer">Products</a></li>
-                <li><a href="index.php#about">About</a></li>
-                <li><a href="index.php#contactUs">Contact Us</a></li>
-                <li><a href="account.php">Account</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#shopContainer">Products</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contactUs">Contact Us</a></li>
             </ul>
-
             <div class="header-btn">
                 <a href="signUp.php" class="sign-up" id="sign-up">Sign Up</a>
-                <a href="signIn.php" class="sign-in" id="sign-in">Sign In</a>
-                <a href="">Logout</a>
+                <a href="signIn.php" class="sign-in">Sign In</a>
 
                 <i class='bx bx-shopping-bag' id="cart-icon"></i>
                 <div class="cart" id="cart">
@@ -54,6 +51,7 @@ require "../../../Private/Back-End/backendcon.php";
                 </div>
             </div>
         </header>
+
 
         <section class="home" id="home">
             <div class="text">
@@ -95,31 +93,45 @@ require "../../../Private/Back-End/backendcon.php";
             <h2 class="section-title">Shop Products</h2>
 
             <div class="shop-content">
-                <?php
-                $sql = "SELECT product, product_description, size, price, images FROM products";
-                $result = $conn->query($sql);
+                <div class="product-box">
+                    <?php 
+                    $product = "";
+                    $product_description = "";
+                    $size = "";
+                    $price = "";
+                    $image = "";
+                    $quantity = "";
 
-                while($row = $result->fetch_assoc()) { ?>
-                    <div class="product-box">
-                        <table style="width: 100%;">
-                            <div class="input-box">
-                                    <tr>
-                                        <th><img src="../E-Commerce-Designs/Products/<?php echo $row["images"] ?>" class="product-img"></th>
-                                    </tr>
-                                    <tr>
-                                        <th><h2 class="product-title-price"><?php echo $row["product"] . " - £" . $row["price"]; ?></h2></th>
-                                    </tr>
-                                    <tr>
-                                        <th><h2 class="product-size">Size/Amount: <?php echo $row["size"]; ?></h2></th>
-                                    </tr>
-                                    <tr>
-                                        <th><h2 class="product-product-desc"><?php echo $row["product_description"]; ?></h2></th>
-                                    </tr>
-                                    <td><i class='bx bx-shopping-bag add-cart'></i></td>
-                                </div>
-                        </table>
-                    </div>
-                <?php } ?>
+                    $arr = false;
+                    $arr['product'] = $product;
+                    $arr['product_description'] = $product_description;
+                    $arr['size'] = $size;
+                    $arr['price'] = $price;
+                    $arr['image'] = $image;
+                    $arr['quantity'] = $quantity;
+
+                    $prodquery = "SELECT * FROM products LIMIT 1";
+                    $prodstmt = $DBCONNECT -> prepare($prodquery);
+                    $prodchecks = $prodstmt -> execute();
+
+                    $datafound = $prodstmt->fetchALL(PDO::FETCH_OBJ);
+
+                    if (is_array($datafound) && count($datafound) > 0 ) {
+                        $datafound = $datafound[0];
+                        $_SESSION['product'] = $datafound->product;
+                        $_SESSION['product_description'] = $datafound->product_description;
+                        $_SESSION['size'] = $datafound->size;
+                        $_SESSION['price'] = $datafound->price;
+                        $_SESSION['image'] = $datafound->image;
+                        $_SESSION['quantity'] = $datafound->quantity;               
+                    }       
+                    ?>
+                    
+                    <?php if (htmlspecialchars($product && $size && $price && $image && $quantity) != ""): ?>
+                    <h2 class="product-title-price"><?php echo $_SESSION["product"] ?></h2>
+                    <?php endif; ?>
+                    <i class='bx bx-shopping-bag add-cart'></i>
+                </div>
             </div>
         </section>
 
