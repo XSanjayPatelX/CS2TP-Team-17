@@ -35,23 +35,7 @@ require "../../../Private/Back-End/backendcon.php";
                 <a href="signUp.php" class="sign-up" id="sign-up">Sign Up</a>
                 <a href="signIn.php" class="sign-in" id="sign-in">Sign In</a>
                 <a href="">Logout</a>
-
-                <i class='bx bx-shopping-bag' id="cart-icon"></i>
-                <div class="cart" id="cart">
-                    <h2 class="cart-title">Your Cart</h2>
-                    <div class="cart-content">
-
-                    </div>
-
-                    <div class="total">
-                        <div class="total-title">Total</div>
-                        <div class="total-price">£0</div>
-                    </div>
-
-                    <button type="button" class="btn-buy">Buy Now</button>
-
-                    <i class='bx bx-x' id="close-cart"></i>
-                </div>
+                <a href="cart.php">Cart</a>
             </div>
         </header>
 
@@ -83,7 +67,7 @@ require "../../../Private/Back-End/backendcon.php";
 
 
                 <div class="box">
-                    <a href="#cart" class='bx bx-basket'></a>
+                    <a href="cart.php" class='bx bx-basket'></a>
                     <h2>Make your basket</h2>
                     <p>Create Your Basket Just By Selecting The Products Of Your Need And Checkout</p>
                 </div>
@@ -115,7 +99,7 @@ require "../../../Private/Back-End/backendcon.php";
                                     <tr>
                                         <th><h2 class="product-product-desc"><?php echo $row["product_description"]; ?></h2></th>
                                     </tr>
-                                    <td><i class='bx bx-shopping-bag add-cart'></i></td>
+                                    <td><button class='bx bx-shopping-bag add-cart'></button></td>
                                 </div>
                         </table>
                     </div>

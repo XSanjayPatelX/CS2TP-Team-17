@@ -68,32 +68,12 @@ $_SESSION['token'] = individualidentifier(60);
                 <li><a href="index.php#contactUs">Contact Us</a></li>
                 <li><a href="account.php">Account</a></li>
             </ul>
-            
-            <?php
-            
-            ?>
 
             <div class="header-btn">
                 <a href="signUp.php" class="sign-up" id="sign-up">Sign Up</a>
-                <a href="signIn.php" class="sign-in">Sign In</a>
+                <a href="signIn.php" class="sign-in" id="sign-in">Sign In</a>
                 <a href="">Logout</a>
-
-                <i class='bx bx-shopping-bag' id="cart-icon"></i>
-                <div class="cart" id="cart">
-                    <h2 class="cart-title">Your Cart</h2>
-                    <div class="cart-content">
-
-                    </div>
-
-                    <div class="total">
-                        <div class="total-title">Total</div>
-                        <div class="total-price">£0</div>
-                    </div>
-
-                    <button type="button" class="btn-buy">Buy Now</button>
-
-                    <i class='bx bx-x' id="close-cart"></i>
-                </div>
+                <a href="cart.php">Cart</a>                
             </div>
         </header>
 

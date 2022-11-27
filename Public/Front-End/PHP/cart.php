@@ -1,14 +1,3 @@
-<?php
-require "../../../Private/Back-End/backendcon.php";
-
-$checkuser = loginchecker($DBCONNECT);
-
-if (isset($_SESSION['email'])) {
-    $email = $_SESSION['email'];
-}
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -17,7 +6,7 @@ if (isset($_SESSION['email'])) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Health Care Website</title>
 
-        <link rel="stylesheet" href="../CSS/style.css">
+        <link rel="stylesheet" href="../CSS/test.css">
 
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
     </head>
@@ -45,11 +34,18 @@ if (isset($_SESSION['email'])) {
             </div>
         </header>
 
-        <section class="home" id="home">
-            <div class="text">
-                <h1><span><?=$_SESSION['email']?></span></h1>
-            </div>
-        </section>        
+        <section>
+            <div class="cart" id="cart">
+                <h2 class="cart-title">Your Cart</h2>
+                <div class="cart-content">
+                    
+                </div>
 
-    </body>
-</html>
+                <div class="total">
+                    <div class="total-title">Total</div>
+                    <div class="total-price">£0</div>
+                </div>
+
+                <button type="button" class="btn-buy">Buy Now</button>
+            </div>
+        </section>
