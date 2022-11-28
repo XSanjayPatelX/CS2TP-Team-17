@@ -339,7 +339,9 @@ header{
 .shop-content{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, auto));
-    gap: 1,5rem;
+    gap: 2.5rem;
+    margin-left: 50px;
+    margin-right: 50px;
 }
 
 .product-box{
@@ -404,11 +406,12 @@ header{
 .add-cart{
     position: absolute;
     bottom: 0;
-    right: 0;
+    margin-left: -60px;
     background: var(--text-color);
     color: var(--main-color);
     padding: 10px;
     cursor: pointer;
+    width: 50%;
 }
 
 .add-cart:hover{
@@ -696,7 +699,10 @@ hr {
 
 /* sign up */
   * {box-sizing: border-box}
-input[type=text], input[type=password] {
+
+input[type=text],
+input[type=date],
+input[type=password] {
     text-align: center;
     width: 100%;
     padding: 5px;
@@ -706,7 +712,9 @@ input[type=text], input[type=password] {
     background: #ffffff;
 }
 
-input[type=text]:focus, input[type=password]:focus {
+input[type=text]:focus,
+input[type=date],
+input[type=password]:focus {
   background-color: #ddd;
   outline: none;
 }
@@ -734,12 +742,22 @@ button:hover {
 .cancelbtn {
   padding: 14px 20px;
   background-color:#143aa3 ;
+  width: 100%;
 }
 
 .cancelbtn, .signupbtn {
   float: left;
 }
 
+.createaccbtn {
+    padding: 14px 20px;
+    background-color: #0da6dd;
+}
+
+.signinaccbtn {
+    padding: 14px 20px;
+    background-color: #0da6dd;
+}
 .container {
     padding: 108px;
     background:#596fb8;
@@ -773,4 +791,44 @@ button:hover {
   .cancelbtn, .signupbtn {
     width: 50%;
   }
+}
+
+.account {
+    width: 100%;
+    height: 100vh;
+    background: url(../E-Commerce-Designs/Images/homepage.mp4.gif);
+    background-repeat: no-repeat;
+    background-position: center right;
+    background-size: cover;
+    display: grid;
+    grid-gap: 250px;
+    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.acc-card {
+    display: block;
+    text-align: center;
+    width: 100%;
+    background-color: blue;
+    padding: 25px;
+    border-radius: 25px;
+    margin-top: 100px;
+}
+
+.acc-details-btn {
+    color: black;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 20px;
+    width: 150px;
+    height: 50px;
+    text-align: center;
+    margin: 15px;
+}
+
+.label-txt {
+    color: white;
+    font-size: 15px;
+    font-weight: 500;
 }

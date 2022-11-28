@@ -88,7 +88,7 @@ require "../../../Private/Back-End/backendcon.php";
                         <table style="width: 100%;">
                             <div class="input-box">
                                     <tr>
-                                        <th><img src="../E-Commerce-Designs/Products/<?php echo $row["images"] ?>" class="product-img"></th>
+                                        <th><img src="../E-Commerce-Designs/Products/<?php echo $row["images"]; ?>" class="product-img"></th>
                                     </tr>
                                     <tr>
                                         <th><h2 class="product-title-price"><?php echo $row["product"] . " - £" . $row["price"]; ?></h2></th>

@@ -1,44 +1,5 @@
 <?php
 require "../../../Private/Back-End/backendcon.php";
-
-$user_data = loginchecker($DBCONNECT);
-
-$identifier = "";
-$name = "";
-$email = "";
-$birth = "";
-$housenumber = "";
-$streetname = "";
-$townname = "";
-$postcode = "";
-
-if (isset($_SESSION['name'])) {
-    $name = $_SESSION['name'];
-}
-
-if (isset($_SESSION['email'])) {
-    $email = $_SESSION['email'];
-}
-
-if (isset($_SESSION['birth'])) {
-    $birth = $_SESSION['birth'];
-}
-
-if (isset($_SESSION['housenumber'])) {
-    $housenumber = $_SESSION['housenumber'];
-}
-
-if (isset($_SESSION['streetname'])) {
-    $streetname = $_SESSION['streetname'];
-}
-
-if (isset($_SESSION['townname'])) {
-    $townname = $_SESSION['townname'];
-}
-
-if (isset($_SESSION['postcode'])) {
-    $postcode = $_SESSION['postcode'];
-}
 ?>
 
 
@@ -83,7 +44,7 @@ if (isset($_SESSION['postcode'])) {
                 <div class="acc-container">
 
                     <?php
-                    $customer_details = "";
+                    $customer_details = "SELECT name, email, birth, housenumber, streetname, townname, postcode FROM customers LIMIT 1";
                     $result = $conn->query($customer_details);
 
                     while($row = $result->fetch_assoc()) { 
@@ -91,10 +52,10 @@ if (isset($_SESSION['postcode'])) {
 
                     <form class="profile-form" action="" method="" autocomplete="off">
                         <label class="label-txt" for="name">Full Name</label> <br>
-                        <label class="label-txt" for="name"><?=$_SESSION['name']?></label> <br><br>
+                        <label class="label-txt" for="name"><?php echo $row["name"]; ?></label> <br><br>
 
                         <label class="label-txt" for="email">Email</label> <br>
-                        <label class="label-txt" for="email"><?=$_SESSION['email']?></label> <br><br>
+                        <label class="label-txt" for="email"><?php echo $row["email"]; ?></label> <br><br>
                         
                         <label class="label-txt" for="birth">Date Of Birth</label> <br>
                         <label class="label-txt" for="email"><?php echo $row["birth"]; ?></label> <br><br>
