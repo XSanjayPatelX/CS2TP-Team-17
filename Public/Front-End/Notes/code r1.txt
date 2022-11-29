@@ -251,3 +251,16 @@
         </div>
       </div>
     </form>
+
+
+
+    $test_query = "SELECT * FROM customer_orders";
+$result = $conn -> query($test_query);
+
+while ($row = $result -> fetch_assoc()) { ?>
+
+    if ()
+
+<?php
+}
+?>
