@@ -317,10 +317,11 @@ header{
 }
 
 
-.shopContainer {
-    align-items: center;
-    padding: 4rem 0 0rem;
-    width: 70%;
+.shopContainer{
+    padding: 4rem 0 3rem;
+    grid-template-columns: repeat(auto-fit,minmax(250px,auto));
+    gap: 1rem;
+    margin-top: 2rem;
 }
 
 .section-title{
@@ -338,11 +339,9 @@ header{
 .shop-content{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, auto));
-    gap: 1,5rem;
-    justify-items: center;
-    justify-content: center;
-    align-content: stretch;
-    align-items: baseline;
+    gap: 2.5rem;
+    margin-left: 50px;
+    margin-right: 50px;
 }
 
 .product-box{

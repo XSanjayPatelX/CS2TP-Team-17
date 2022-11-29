@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 28, 2022 at 11:07 PM
+-- Generation Time: Nov 29, 2022 at 10:53 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -107,7 +107,7 @@ CREATE TABLE `login_details` (
   `name` varchar(30) NOT NULL,
   `email` varchar(50) NOT NULL,
   `password` varchar(20) NOT NULL,
-  `birth` text NOT NULL,
+  `birth` date NOT NULL,
   `housenumber` int(2) NOT NULL,
   `streetname` varchar(100) NOT NULL,
   `townname` varchar(100) CHARACTER SET utf16 COLLATE utf16_bin NOT NULL,
@@ -120,9 +120,10 @@ CREATE TABLE `login_details` (
 
 INSERT INTO `login_details` (`id`, `identifier`, `name`, `email`, `password`, `birth`, `housenumber`, `streetname`, `townname`, `postcode`) VALUES
 (1, '', 'John Smith', 'jsmith@mail.org', 'echo7', '1992-01-01', 22, 'Intern Avenue', 'Camden', 'C22 NL1'),
-(2, '', 'Maggie Adams', 'm.adams@email.com', 'flower19', '03-12-1969', 43, 'Shelby Drive', 'Monton', 'MO3 7BY'),
+(2, '', 'Maggie Adams', 'm.adams@email.com', 'flower19', '0000-00-00', 43, 'Shelby Drive', 'Monton', 'MO3 7BY'),
 (3, '', 'Matt Edwards', 'medwards00@gmail.com', 'builder1@1', '2000-09-11', 1, 'Saint Manny Avenue', 'Boston', 'BU8 3BQ'),
-(4, 'JJOno3l4nI7HFDblFI6RDI8hdQLNzmjvUI4pNPCYsqTq3hy3l', 'Ash Jackson', 'jxash@gmail.com', '123', '1998-11-16', 234, 'Fairway Avenue', 'Birmingham', 'WB9 7LK');
+(4, 'JJOno3l4nI7HFDblFI6RDI8hdQLNzmjvUI4pNPCYsqTq3hy3l', 'Ash Jackson', 'jxash@gmail.com', '123', '1998-11-16', 234, 'Fairway Avenue', 'Birmingham', 'WB9 7LK'),
+(12, 'Inw78ho4V4D0mj46FEscMG9uCrW', 'Alison Carlson', 'acarlson@gmail.com', '1234', '1997-11-18', 123, 'Jamerson Avenue', 'Birmingham', 'BJ5 8JK');
 
 -- --------------------------------------------------------
 
@@ -213,7 +214,7 @@ ALTER TABLE `customer_orders`
 -- AUTO_INCREMENT for table `login_details`
 --
 ALTER TABLE `login_details`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `products`

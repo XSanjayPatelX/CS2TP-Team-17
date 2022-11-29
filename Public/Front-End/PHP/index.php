@@ -78,66 +78,34 @@ require "../../../Private/Back-End/backendcon.php";
         <section class="shopContainer" id="shopContainer">
             <h2 class="section-title">Shop Products</h2>
 
-    <div class="shop-content">
-        <div class="product-box">
-            <img src="../E-Commerce-Designs/Products/P1.PNG" alt="" class="product-img">
-            <h2 class="product-title">Daily skin care kit</h2>
-            <span class="price">£45</span>
-            <i class='bx bx-shopping-bag add-cart'></i>
-        </div>
+            <div class="shop-content">
+                <?php
+                $sql = "SELECT product, product_description, size, price, images FROM products";
+                $result = $conn->query($sql);
 
-        <div class="product-box">
-            <img src="../E-Commerce-Designs/Products/P2.PNG" alt="" class="product-img">
-            <h2 class="product-title">Anti wrinkle cream</h2>
-            <span class="price">£10</span>
-            <i class='bx bx-shopping-bag add-cart'></i>
-        </div>
-
-        <div class="product-box">
-            <img src="../E-Commerce-Designs/Products/P3.PNG" alt="" class="product-img">
-            <h2 class="product-title">Insulin pump</h2>
-            <span class="price">£20</span>
-            <i class='bx bx-shopping-bag add-cart'></i>
-        </div>
-
-        <div class="product-box">
-            <img src="../E-Commerce-Designs/Products/P4.PNG" alt="" class="product-img">
-            <h2 class="product-title">After shave</h2>
-            <span class="price">£14</span>
-            <i class='bx bx-shopping-bag add-cart'></i>
-        </div>
-
-        <div class="product-box">
-            <img src="../E-Commerce-Designs/Products/P5.PNG" alt="" class="product-img">
-            <h2 class="product-title">Bottle of shampoo</h2>
-            <span class="price">£6</span>
-            <i class='bx bx-shopping-bag add-cart'></i>
-        </div>
-
-        <div class="product-box">
-            <img src="../E-Commerce-Designs/Products/P6.PNG" alt="" class="product-img">
-            <h2 class="product-title">Perfume</h2>
-            <span class="price">£25</span>
-            <i class='bx bx-shopping-bag add-cart'></i>
-        </div>
-
-        <div class="product-box">
-            <img src="../E-Commerce-Designs/Products/P7.PNG" alt="" class="product-img">
-            <h2 class="product-title">Thermometer</h2>
-            <span class="price">£12</span>
-            <i class='bx bx-shopping-bag add-cart'></i>
-        </div>
-
-        <div class="product-box">
-            <img src="../E-Commerce-Designs/Products/P8.PNG" alt="" class="product-img">
-            <h2 class="product-title">White face mask</h2>
-            <span class="price">£1</span>
-            <i class='bx bx-shopping-bag add-cart'></i>
-        </div>
-
-        
-    </div>
-</section>
+                while($row = $result->fetch_assoc()) { ?>
+                    <div class="product-box">
+                        <table style="width: 100%;">
+                            <div class="input-box">
+                                    <tr>
+                                        <th><img src="../E-Commerce-Designs/Products/<?php echo $row["images"]; ?>" class="product-img"></th>
+                                    </tr>
+                                    <tr>
+                                        <th><h2 class="product-title-price"><?php echo $row["product"] . " - £" . $row["price"]; ?></h2></th>
+                                    </tr>
+                                    <tr>
+                                        <th><h2 class="product-size">Size/Amount: <?php echo $row["size"]; ?></h2></th>
+                                    </tr>
+                                    <tr>
+                                        <th><h2 class="product-product-desc"><?php echo $row["product_description"]; ?></h2></th>
+                                    </tr>
+                                    <td><button class='bx bx-shopping-bag add-cart'></button></td>
+                                </div>
+                        </table>
+                    </div>
+                <?php } ?>
+            </div>
+        </section>
 
         <script src="../JS/main.js"></script>
 
