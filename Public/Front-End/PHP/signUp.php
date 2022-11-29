@@ -2,25 +2,40 @@
 require "../../../Private/Back-End/backendcon.php";
 
 $error = "";
+$name = "";
 $email = "";
 $password = "";
 $passwordrep = "";
+$birth = "";
+$housenumber = "";
+$streetname = "";
+$townname = "";
+$postcode = "";
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
   $email = $_POST['email'];
   if (!preg_match("/^[\w\-]+@[\w\-]+.[\w\-]+$/", $email)) {
-
       $error = "Please enter a valid email.";
-
   }
 
+  $name = $_POST['name'];
+  if (!preg_match("/^(?![\s.]+$)[a-zA-Z\s.]*$/", $name)) {
+      $error = "Please enter a valid email.";
+  }
+
+  $name = specialchar($_POST['name']);
   $email = specialchar($_POST['email']);
   $password = specialchar($_POST['password']);
   $passwordrep = specialchar($_POST['passwordrep']);
+  $birth = specialchar($_POST['birth']);
+  $housenumber = specialchar($_POST['housenumber']);
+  $streetname = specialchar($_POST['streetname']);
+  $townname = specialchar($_POST['townname']);
+  $postcode = specialchar($_POST['postcode']);
 
   $identifier = individualidentifier(60);
   
-  // Check if username already exists and the passwords are matching
+  // This will check if the email address is already in use and the passwords are matching
   $arr = false;
   $arr['email'] = $email;
   $query = "SELECT * FROM login_details WHERE email = :email LIMIT 1";
@@ -37,15 +52,21 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     }
   }
 
-  // Putting the data into the database
+  // This will happen if there are no errors and then input the data into the database
   if ($error == "") {
 
     $arr['identifier'] = $identifier;
+    $arr['name'] = $name;
     $arr['email'] = $email;
     $arr['password'] = $password;
+    $arr['birth'] = $birth;
+    $arr['housenumber'] = $housenumber;
+    $arr['streetname'] = $streetname;
+    $arr['townname'] = $townname;
+    $arr['postcode'] = $postcode;
     
-    $query = "INSERT INTO login_details (identifier, email, password) values (:identifier, :email, :password)";
-    $stm = $DBCONNECT->prepare($query);
+    $signupquery = "INSERT INTO login_details (identifier, name, email, password, birth, housenumber, streetname, townname, postcode) values (:identifier, :name, :email, :password, :birth, :housenumber, :streetname, :townname, :postcode)";
+    $stm = $DBCONNECT->prepare($signupquery);
     $stm->execute($arr);
         
     header("Location: signin.php");
@@ -104,8 +125,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         <p>Please fill in this form to create an account.</p>
         <hr>
     
-        <label for="fullname"><b>Full Name*</b></label>
-        <input type="text" placeholder="Full Name" name="fullname" required>
+        <label for="name"><b>Full Name*</b></label>
+        <input type="text" placeholder="Full Name" name="name" required>
 
         <label for="email"><b>Email Address*</b></label>
         <input type="text" placeholder="Enter Email Address" name="email" required>
@@ -116,8 +137,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         <label for="passwordrep"><b>Repeat Password*</b></label>
         <input type="password" placeholder="Re-Enter Password" name="passwordrep" required>
 
-        <label for="dob"><b>Date Of Birth*</b></label>
-        <input type="date" placeholder="Enter Date Of Birth" name="dob" required>
+        <label for="birth"><b>Date Of Birth*</b></label>
+        <input type="date" placeholder="Enter Date Of Birth (DD/MM/YY)" name="birth" required>
 
         <label for="housenumber"><b>House Number*</b></label>
         <input type="text" placeholder="Enter House Number" name="housenumber" required>
