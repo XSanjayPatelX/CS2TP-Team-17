@@ -28,7 +28,13 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_SESSION['token']) && isset($_
       if (is_array($datafound) && count($datafound) > 0 ) {
         $datafound = $datafound[0];
         $_SESSION['identifier'] = $datafound->identifier;
+        $_SESSION['name'] = $datafound->name;
         $_SESSION['email'] = $datafound->email;
+        $_SESSION['birth'] = $datafound->birth;
+        $_SESSION['housenumber'] = $datafound->housenumber;
+        $_SESSION['streetname'] = $datafound->streetname;
+        $_SESSION['townname'] = $datafound->townname;
+        $_SESSION['postcode'] = $datafound->postcode;
         
         header("Location: account.php");
         exit;

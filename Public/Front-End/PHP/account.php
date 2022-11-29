@@ -3,7 +3,6 @@ require "../../../Private/Back-End/backendcon.php";
 
 $user_data = loginchecker($DBCONNECT);
 
-$identifier = "";
 $name = "";
 $email = "";
 $birth = "";
@@ -82,13 +81,6 @@ if (isset($_SESSION['postcode'])) {
             <div class="acc-card">
                 <div class="acc-container">
 
-                    <?php
-                    $customer_details = "";
-                    $result = $conn->query($customer_details);
-
-                    while($row = $result->fetch_assoc()) { 
-                    ?>
-
                     <form class="profile-form" action="" method="" autocomplete="off">
                         <label class="label-txt" for="name">Full Name</label> <br>
                         <label class="label-txt" for="name"><?=$_SESSION['name']?></label> <br><br>
@@ -97,23 +89,22 @@ if (isset($_SESSION['postcode'])) {
                         <label class="label-txt" for="email"><?=$_SESSION['email']?></label> <br><br>
                         
                         <label class="label-txt" for="birth">Date Of Birth</label> <br>
-                        <label class="label-txt" for="email"><?php echo $row["birth"]; ?></label> <br><br>
+                        <label class="label-txt" for="birth"><?=$_SESSION['birth']?></label> <br><br>
                         
                         <label class="label-txt" for="housenumber">House Number</label> <br>
-                        <input class="" type="text" name="housenumber" placeholder="<?php echo $row["housenumber"]; ?>"> <br><br>
+                        <input class="" type="text" name="housenumber" placeholder="<?php echo $housenumber ?>"> <br><br>
                         
                         <label class="label-txt" for="streetname">Street Name</label> <br>
-                        <input class="" type="text" name="streetname" placeholder="<?php echo $row["streetname"]; ?>"> <br><br>
+                        <input class="" type="text" name="streetname" placeholder="<?php echo $streetname ?>"> <br><br>
                         
                         <label class="label-txt" for="townname">Town Name</label> <br>
-                        <input class="" type="text" name="townname" placeholder="<?php echo $row["townname"]; ?>"> <br><br>
+                        <input class="" type="text" name="townname" placeholder="<?php echo $townname ?>"> <br><br>
                         
                         <label class="label-txt" for="postcode">Postcode</label> <br>
-                        <input class="" type="text" name="postcode" placeholder="<?php echo $row["postcode"]; ?>"> <br><br>
+                        <input class="" type="text" name="postcode" placeholder="<?php echo $postcode ?>"> <br><br>
 
                         <input class="acc-details-btn" type="submit" value="Update">                            
                     </form>
-                    <?php } ?>
                 </div>
             </div>
 
