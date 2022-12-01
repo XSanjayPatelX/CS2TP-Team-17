@@ -1,13 +1,10 @@
-<!-- PHP -->
 <?php
-// Getting files from the private folder
 require "../../../Private/Back-End/backendcon.php";
 ?>
 
-<!-- HTML -->
+
 <!DOCTYPE html>
 <html lang="en">
-    <!-- Headers for the web page -->
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,16 +12,16 @@ require "../../../Private/Back-End/backendcon.php";
         <title>Health Care Website</title>
 
         <link rel="stylesheet" href="../CSS/style.css">
+
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
     </head>
-    
 
-    <!-- Body for the web page -->
     <body>
-        <!-- Navbar -->
         <header>
             <a href="#" class="logo"><img src="../E-Commerce-Designs/Logos/logo.png" alt=""></a>
+
             <div class="bx bx-menu" id="menu-icon"></div>
+
             <ul class="navbar">
                 <li><a href="index.php#home">Home</a></li>
                 <li><a href="index.php#services">Services</a></li>
@@ -42,8 +39,6 @@ require "../../../Private/Back-End/backendcon.php";
             </div>
         </header>
 
-        <!-- Main web page stuff -->
-        <!-- Main web page - Home -->
         <section class="home" id="home">
             <div class="text">
                 <h1><span>Health Care </span> on <br>your finger tips</h1>
@@ -51,7 +46,6 @@ require "../../../Private/Back-End/backendcon.php";
             </div>
         </section>
 
-        <!-- Main web page - Services -->
         <section class="services" id="services">
             <div class="heading">
                 <span>How It Works</span>
@@ -77,21 +71,19 @@ require "../../../Private/Back-End/backendcon.php";
                     <h2>Make your basket</h2>
                     <p>Create Your Basket Just By Selecting The Products Of Your Need And Checkout</p>
                 </div>
+
             </div>
         </section>
 
-        <!-- Main web page - Shop -->
         <section class="shopContainer" id="shopContainer">
             <h2 class="section-title">Shop Products</h2>
 
             <div class="shop-content">
                 <?php
-                // Query to select product information
                 $sql = "SELECT product, product_description, size, price, images FROM products";
                 $result = $conn->query($sql);
 
                 while($row = $result->fetch_assoc()) { ?>
-                    <!-- Shop - adding products from database to webpage -->
                     <div class="product-box">
                         <table style="width: 100%;">
                             <div class="input-box">
@@ -115,7 +107,8 @@ require "../../../Private/Back-End/backendcon.php";
             </div>
         </section>
 
-        <!-- Main web page - About Page -->
+        <script src="../JS/main.js"></script>
+
         <section class="about" id="about">
             <div class="about-text">
                 <span><h1>About Us</h1></span>
@@ -153,7 +146,7 @@ require "../../../Private/Back-End/backendcon.php";
             </div>
         </section>
 
-        <!-- Main web page - The Team -->
+
         <section class="team" id="team">
             <div class="heading">
                 <span>Team Members</span>
@@ -226,5 +219,6 @@ require "../../../Private/Back-End/backendcon.php";
                 </div>
             </div>
         </section>
+
     </body>
 </html>

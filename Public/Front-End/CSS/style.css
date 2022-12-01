@@ -795,13 +795,13 @@ button:hover {
 
 .account {
     width: 100%;
-    height: 100vh;
+    height: 150vh;
     background: url(../E-Commerce-Designs/Images/homepage.mp4.gif);
     background-repeat: no-repeat;
-    background-position: center right;
+    background-position: center;
     background-size: cover;
     display: grid;
-    grid-gap: 250px;
+    grid-gap: 25px;
     align-items: center;
     grid-template-columns: repeat(2, 1fr);
 }
@@ -813,22 +813,42 @@ button:hover {
     background-color: blue;
     padding: 25px;
     border-radius: 25px;
-    margin-top: 100px;
-}
-
-.acc-details-btn {
-    color: black;
-    font-size: 15px;
-    font-weight: 600;
-    border-radius: 20px;
-    width: 150px;
-    height: 50px;
-    text-align: center;
-    margin: 15px;
+    width: auto;
+    margin-bottom: 500px;
 }
 
 .label-txt {
     color: white;
     font-size: 15px;
     font-weight: 500;
+}
+
+.label-txt-rec {
+    color: grey;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.admin-product-box-cust-det {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 1px 4px 41px rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    position: relative;
+    height: auto;
+    width: 950px;
+}
+
+.admin-product-box-cust-ord {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 1px 4px 41px rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    position: relative;
+    height: auto;
+    width: auto;
 }

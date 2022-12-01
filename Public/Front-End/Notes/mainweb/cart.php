@@ -1,13 +1,9 @@
-<!-- PHP -->
 <?php 
-// Getting files from the private folder
 require "../../../Private/Back-End/backendcon.php"
 ?>
 
-<!-- HTML -->
 <!DOCTYPE html>
 <html lang="en">
-    <!-- Headers for the web page -->
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,14 +11,14 @@ require "../../../Private/Back-End/backendcon.php"
         <title>Health Care Website</title>
 
         <link rel="stylesheet" href="../CSS/test.css">
+
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
     </head>
 
-    <!-- Body for the web page -->
     <body>
-        <!-- Navbar -->
         <header>
             <a href="#" class="logo"><img src="../E-Commerce-Designs/Logos/logo.png" alt=""></a>
+
             <div class="bx bx-menu" id="menu-icon"></div>
 
             <ul class="navbar">
@@ -42,12 +38,14 @@ require "../../../Private/Back-End/backendcon.php"
             </div>
         </header>
 
-        <!-- Main web page stuff -->
-        <!-- Main web page - Cart -->
         <section>
             <div class="cart" id="cart">
                 <h2 class="cart-title">Your Cart</h2>
-                <div class="cart-content"></div>
+                <div class="cart-content">
+                    <?php
+                    
+                    ?>
+                </div>
 
                 <div class="total">
                     <div class="total-title">Total</div>
@@ -57,5 +55,3 @@ require "../../../Private/Back-End/backendcon.php"
                 <button type="button" class="btn-buy">Buy Now</button>
             </div>
         </section>
-    </body>
-</html>

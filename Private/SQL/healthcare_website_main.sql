@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 29, 2022 at 10:53 AM
+-- Generation Time: Nov 29, 2022 at 07:13 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -81,19 +81,19 @@ CREATE TABLE `customer_orders` (
   `id` int(11) NOT NULL,
   `order_number` int(5) NOT NULL,
   `name` varchar(30) DEFAULT NULL,
-  `product` varchar(30) DEFAULT NULL,
-  `size` int(11) DEFAULT NULL,
-  `quantity` int(2) DEFAULT NULL
+  `email` varchar(50) NOT NULL,
+  `product` varchar(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `customer_orders`
 --
 
-INSERT INTO `customer_orders` (`id`, `order_number`, `name`, `product`, `size`, `quantity`) VALUES
-(1, 150, 'John Smith', 'Face wash', 250, 1),
-(2, 120, 'Maggie Adams', 'Vitamin D tablets', 100, 1),
-(3, 170, 'Matt Edwards', 'Body lotion', 150, 1);
+INSERT INTO `customer_orders` (`id`, `order_number`, `name`, `email`, `product`) VALUES
+(1, 150, 'John Smith', '', 'Face wash'),
+(2, 120, 'Maggie Adams', '', 'Vitamin D tablets'),
+(3, 170, 'Matt Edwards', '', 'Body lotion'),
+(4, 2, 'Alison Carlson', 'acarlson@gmail.com', 'After Shave');
 
 -- --------------------------------------------------------
 
@@ -149,7 +149,7 @@ INSERT INTO `products` (`id`, `product`, `product_description`, `size`, `price`,
 (3, 'Anti Wrinkle Cream', 'Suitable for all skin types (dry, oily and sensitive). All in one Rejuvenating Formula towards anti-aging.', 250, '10.00', 'P2.PNG'),
 (4, 'Insulin Pump', 'An Electronic Device that pumps Insulin around the body, during a 24-hour duration, ensuring all areas have an appropriate sugar level.', 1, '20.00', 'P3.PNG'),
 (5, 'After Shave', 'Vanilla and Oud Fragrance to use after shaving facial hair for men.', 50, '14.00', 'P4.PNG'),
-(6, 'Bottle of Shampoo', 'A stronger formulae that enables the cleanse of unwanted dirt and oils from the scalp.', 250, '6.00', 'P5.png'),
+(6, 'Bottle of Shampoo', 'A stronger formulae that enables the cleanse of unwanted dirt and oils from the scalp.', 250, '6.00', 'P5.PNG'),
 (7, 'Perfume', 'A fragrant formula to provide an appealing scent when applied. (Floral and Blackberry).', 50, '25.00', 'P6.jpg'),
 (8, 'Thermometer', 'A piece of equipment used to detect the temperature of solids, liquids and gases.', 1, '12.00', 'P7.PNG'),
 (9, 'Face Mask ', 'Protective Mask for the prevention of catching known diseases such as Influenza and COVID-19.', 1, '1.00', 'P8.PNG');
@@ -208,7 +208,7 @@ ALTER TABLE `card_details`
 -- AUTO_INCREMENT for table `customer_orders`
 --
 ALTER TABLE `customer_orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `login_details`

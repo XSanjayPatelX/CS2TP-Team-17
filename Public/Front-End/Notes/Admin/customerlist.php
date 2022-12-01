@@ -1,55 +1,18 @@
-<!-- PHP -->
 <?php
-// Getting files from the private folder
-require "../../../Private/Back-End/backendcon.php";
+require "../../../../Private/Back-End/backendcon.php";
 
-// This is to ensure that user stays logged in, if they are not logged in the they will be redirected to the sign in page
-$user_data = loginchecker($DBCONNECT);
+$user_data = adminchecker($DBCONNECT);
 
-// For the variables to be empty
-$name = "";
-$email = "";
-$birth = "";
-$housenumber = "";
-$streetname = "";
-$townname = "";
-$postcode = "";
+$username = "";
 
-// The users details will be used from the database to show them their details 
-if (isset($_SESSION['name'])) {
-    $name = $_SESSION['name'];
-}
-
-if (isset($_SESSION['email'])) {
-    $email = $_SESSION['email'];
-}
-
-if (isset($_SESSION['birth'])) {
-    $birth = $_SESSION['birth'];
-}
-
-if (isset($_SESSION['housenumber'])) {
-    $housenumber = $_SESSION['housenumber'];
-}
-
-if (isset($_SESSION['streetname'])) {
-    $streetname = $_SESSION['streetname'];
-}
-
-if (isset($_SESSION['townname'])) {
-    $townname = $_SESSION['townname'];
-}
-
-if (isset($_SESSION['postcode'])) {
-    $postcode = $_SESSION['postcode'];
+if (isset($_SESSION['username'])) {
+    $name = $_SESSION['username'];
 }
 ?>
 
 
-<!-- HTML -->
 <!DOCTYPE html>
 <html lang="en">
-    <!-- Headers for the web page -->
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -57,12 +20,11 @@ if (isset($_SESSION['postcode'])) {
         <title>Health Care Website</title>
 
         <link rel="stylesheet" href="../CSS/style.css">
+
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
     </head>
 
-    <!-- Body for the web page -->
     <body>
-        <!-- Navbar -->
         <header>
             <a href="#" class="logo"><img src="../E-Commerce-Designs/Logos/logo.png" alt=""></a>
 
@@ -85,13 +47,10 @@ if (isset($_SESSION['postcode'])) {
             </div>
         </header>
 
-        <!-- Main web page stuff -->
-        <!-- Main web page - The users information avaliable to them -->
         <section class="account">
             <div class="acc-card">
                 <div class="acc-container">
 
-                    <!-- the PHP tags will get details about the user from the database to the current page (accounts page) -->
                     <form class="profile-form" action="" method="" autocomplete="off">
                         <label class="label-txt" for="name">Full Name</label> <br>
                         <label class="label-txt" for="name"><?=$_SESSION['name']?></label> <br><br>
@@ -120,7 +79,6 @@ if (isset($_SESSION['postcode'])) {
             <div class="acc-card">
                 <div class="acc-container">
                     <?php
-                    // Reads from the database to show the user their previous orders (NOT WORKING)
                     $custdetail_query = "SELECT * FROM customer_orders LIMIT 1";
                     $custdetail_result = $conn -> query($custdetail_query);
 

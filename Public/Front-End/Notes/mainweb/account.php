@@ -38,6 +38,19 @@ if (isset($_SESSION['townname'])) {
 if (isset($_SESSION['postcode'])) {
     $postcode = $_SESSION['postcode'];
 }
+
+//--------------------------------------------------------------
+
+$order_number = "";
+$product = "";
+
+if (isset($_SESSION['order_number'])) {
+    $order_number = $_SESSION['order_number'];
+}
+
+if (isset($_SESSION['product'])) {
+    $product = $_SESSION['product'];
+}
 ?>
 
 
@@ -92,57 +105,46 @@ if (isset($_SESSION['postcode'])) {
                         <label class="label-txt" for="birth"><?=$_SESSION['birth']?></label> <br><br>
                         
                         <label class="label-txt" for="housenumber">House Number</label> <br>
-                        <input class="" type="text" name="housenumber" placeholder="<?php echo $housenumber ?>"> <br><br>
+                        <label class="label-txt" for="housenumber"><?=$_SESSION['housenumber']?></label> <br><br>
                         
                         <label class="label-txt" for="streetname">Street Name</label> <br>
-                        <input class="" type="text" name="streetname" placeholder="<?php echo $streetname ?>"> <br><br>
+                        <label class="label-txt" for="streetname"><?=$_SESSION['streetname']?></label> <br><br>
                         
                         <label class="label-txt" for="townname">Town Name</label> <br>
-                        <input class="" type="text" name="townname" placeholder="<?php echo $townname ?>"> <br><br>
+                        <label class="label-txt" for="townname"><?=$_SESSION['townname']?></label> <br><br>
                         
                         <label class="label-txt" for="postcode">Postcode</label> <br>
-                        <input class="" type="text" name="postcode" placeholder="<?php echo $postcode ?>"> <br><br>
-
-                        <input class="acc-details-btn" type="submit" value="Update">                            
+                        <label class="label-txt" for="postcode"><?=$_SESSION['postcode']?></label> <br><br>
                     </form>
                 </div>
             </div>
 
             <div class="acc-card">
                 <div class="acc-container">
-
                     <?php
-                    $custdetail_query = "SELECT order_number, name, email, product FROM customer_orders";
+                    $custdetail_query = "SELECT * FROM customer_orders LIMIT 1";
                     $custdetail_result = $conn -> query($custdetail_query);
-                    
-                    $custdetail_email = "SELECT email FROM customer_orders";
-                    $custdetail_email_result = $conn -> query($custdetail_email);
 
-                    $getlog_query = "SELECT email FROM login_details LIMIT 1";
-                    $getlog_result = $conn -> query($getlog_query);
-
-                    if ($custdetail_email_result == $getlog_result) {
-                        while ($row = $custdetail_result -> fetch_assoc()) {
+                    while ($row = $custdetail_result -> fetch_assoc()) {
                     ?>
 
                     <table style="width: 100%;">
                         <div class="input-box">
                             <tr>
-                                <th><img src="../E-Commerce-Designs/Products/<?php echo $row["ordernumber"]; ?>" class="product-img"></th>
+                                <label class="label-txt"><?=$_SESSION['name']?></label> <br>
                             </tr>
                             <tr>
-                                <th><h2 class="product-title-price"><?php ?></h2></th>
+                                <label class="label-txt"><?php $_SESSION['order_number'] ?></label> <br>
                             </tr>
                             <tr>
-                                <th><h2 class="product-size">Size/Amount: <?php ?></h2></th>
+                                <label class="label-txt"><?=$_SESSION['email']?></label> <br>
                             </tr>
                             <tr>
-                                <th><h2 class="product-product-desc"><?php  ?></h2></th>
+                                <label class="label-txt"><?php echo $product ?></label> <br>
                             </tr>
                         </div>
                     </table>
                     <?php
-                        }
                     }
                     ?>
                 </div>

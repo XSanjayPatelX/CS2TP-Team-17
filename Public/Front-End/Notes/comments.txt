@@ -1,0 +1,31 @@
+// Getting files from the private folder
+// Query to select product information
+// Using if statement to create a local login save until logout is clicked
+// Regex for email input field
+// If statement to continue with sign in process if there are no errors
+// Reads from the database to see if the email and password matches the user trying to sign in
+// An error to let the user know if their login details are wrong
+// The token for the current user to keep them logged in
+// This is for any errors to be printed for all users to see
+// For the variables to be empty
+// Using if statement to creating an account
+// All fields will be able to use special characters to be added in the database if sign up is successfull
+// This will check if the email address is already in use and the passwords are matching
+// After clicking logout the user will be redirected to the home page
+// This is to ensure that user stays logged in, if they are not logged in the they will be redirected to the sign in page
+// The users details will be used from the database to show them their details 
+// Reads from the database to show the user their previous orders (NOT WORKING)
+// Using if statement to creating an account although this page wont be accessable to anyone unless they know the filename and link
+
+
+
+
+<!-- HTML -->
+<!-- Headers for the web page -->
+<!-- Body for the web page -->
+<!-- Navbar -->
+<!-- Main web page stuff -->
+<!-- Main web page - Home -->
+<!-- Main web page - About Page -->
+<!-- Main web page - The Team -->
+<!-- Shop - adding products from database to webpage -->
