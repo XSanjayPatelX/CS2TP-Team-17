@@ -12,9 +12,9 @@ require "../../../Private/Back-End/backendcon.php"
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Health Care Website</title>
+        <title>Health Care Website - Cart</title>
 
-        <link rel="stylesheet" href="../CSS/test.css">
+        <link rel="stylesheet" href="../CSS/style.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
     </head>
 
@@ -37,7 +37,7 @@ require "../../../Private/Back-End/backendcon.php"
             <div class="header-btn">
                 <a href="signUp.php" class="sign-up" id="sign-up">Sign Up</a>
                 <a href="signIn.php" class="sign-in" id="sign-in">Sign In</a>
-                <a href="">Logout</a>
+                <a href="logout.php">Logout</a>
                 <a href="cart.php">Cart</a>                
             </div>
         </header>
@@ -47,7 +47,8 @@ require "../../../Private/Back-End/backendcon.php"
         <section>
             <div class="cart" id="cart">
                 <h2 class="cart-title">Your Cart</h2>
-                <div class="cart-content"></div>
+                <div class="cart-content">
+                </div>
 
                 <div class="total">
                     <div class="total-title">Total</div>

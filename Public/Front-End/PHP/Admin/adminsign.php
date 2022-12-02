@@ -11,20 +11,20 @@ $password = "";
 // Using if statement to creating an account although this page wont be accessable to anyone unless they know the filename and link
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
-  $username = specialchar($_POST['username']);
-  $password = specialchar($_POST['password']);
+  $username = addslash($_POST['username']);
+  $password = addslash($_POST['password']);
 
   $identifier = adminidentifier(60);
   
   // Reads from the database to see if the username is already used when signing up
   $arr = false;
   $arr['username'] = $username;
-  $query = "SELECT * FROM admin_login WHERE username = :username LIMIT 1";
-  $statement = $DBCONNECT->prepare($query);
-  $checker = $statement->execute($arr);
+  $admin_signup = "SELECT * FROM admin_login WHERE username = :username LIMIT 1";
+  $admin_signup_result = $DBCONNECT->prepare($admin_signup);
+  $checker = $admin_signup_result->execute($arr);
 
   if ($checker) {
-    $datafound = $statement->fetchALL(PDO::FETCH_OBJ);
+    $datafound = $admin_signup_result->fetchALL(PDO::FETCH_OBJ);
     if (is_array($datafound) && count($datafound) > 0) {
       $error = "This username is already being used by another user.";              
     }
@@ -56,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Health Care Website</title>
+    <title>Health Care Website Admin - Sign Up</title>
 
     <link rel="stylesheet" href="../../CSS/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
@@ -74,7 +74,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
       <div class="header-btn">
         <a href="adminlog.php" class="sign-in" id="sign-in">Sign In</a>
-        <a href="">Logout</a>
       </div>
     </header>
 

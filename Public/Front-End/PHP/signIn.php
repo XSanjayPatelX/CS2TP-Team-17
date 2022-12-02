@@ -21,12 +21,12 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_SESSION['token']) && isset($_
     $arr['password'] = $password;
 
     // Reads from the database to see if the email and password matches the user trying to sign in
-    $query = "SELECT * FROM login_details WHERE email = :email && password = :password LIMIT 1";
-    $result = $DBCONNECT->prepare($query);
-    $checker = $result->execute($arr);
+    $login_match = "SELECT * FROM login_details WHERE email = :email && password = :password LIMIT 1";
+    $login_match_result = $DBCONNECT->prepare($login_match);
+    $checker = $login_match_result->execute($arr);
 
     if ($checker) {
-      $datafound = $result->fetchALL(PDO::FETCH_OBJ);
+      $datafound = $login_match_result->fetchALL(PDO::FETCH_OBJ);
 
       if (is_array($datafound) && count($datafound) > 0 ) {
         $datafound = $datafound[0];
@@ -59,7 +59,7 @@ $_SESSION['token'] = individualidentifier(60);
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Health Care Website</title>
+      <title>Health Care Website - Sign In</title>
 
       <link rel="stylesheet" href="../CSS/style.css">
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
@@ -83,7 +83,6 @@ $_SESSION['token'] = individualidentifier(60);
         <div class="header-btn">
             <a href="signUp.php" class="sign-up" id="sign-up">Sign Up</a>
             <a href="signIn.php" class="sign-in" id="sign-in">Sign In</a>
-            <a href="">Logout</a>
             <a href="cart.php">Cart</a>                
         </div>
     </header>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 29, 2022 at 07:13 PM
+-- Generation Time: Dec 02, 2022 at 01:43 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -24,52 +24,29 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin`
+-- Table structure for table `admin_login`
 --
 
-CREATE TABLE `admin` (
+CREATE TABLE `admin_login` (
   `id` int(11) NOT NULL,
+  `identifier` varchar(60) NOT NULL,
   `username` varchar(30) NOT NULL,
-  `adminkey` int(9) NOT NULL,
-  `password` varchar(30) NOT NULL
+  `password` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `admin`
+-- Dumping data for table `admin_login`
 --
 
-INSERT INTO `admin` (`id`, `username`, `adminkey`, `password`) VALUES
-(1, 'dievan', 1, '1234'),
-(2, 'sanjay', 4, '7657'),
-(3, 'dalvir', 2, '1123'),
-(4, 'zuhaib', 3, '2345'),
-(5, 'alex', 5, '3421'),
-(6, 'hans', 8, '5643'),
-(7, 'arshdeep', 6, '3654'),
-(8, 'ravjot', 7, '9087');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `card_details`
---
-
-CREATE TABLE `card_details` (
-  `id` int(11) NOT NULL,
-  `fullname` varchar(30) DEFAULT NULL,
-  `cardnumber` bigint(16) DEFAULT NULL,
-  `expiration` date DEFAULT NULL,
-  `cvv` int(3) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `card_details`
---
-
-INSERT INTO `card_details` (`id`, `fullname`, `cardnumber`, `expiration`, `cvv`) VALUES
-(1, 'John Smith', 4424453671625989, '2023-07-01', 675),
-(2, 'Maggie Adams', 7654980712127543, '2022-12-06', 232),
-(3, 'Matt Edwards', 1191524378968919, '2024-01-26', 978);
+INSERT INTO `admin_login` (`id`, `identifier`, `username`, `password`) VALUES
+(1, 'JIlez4zusGBlpVdPE0I4', 'sanjay', '77'),
+(2, 'ORyaw5xPn6jTjI8nKbuaAetbrURDBf4', 'dievan', '32'),
+(3, 'yHcqL0uQxs7QwPrdWWAp2IbHtwItB17pKKFwDlxM', 'zuhaib', '94'),
+(4, 'dfWpptSAtAUeb6NgFY0LMF', 'dalvir', '35'),
+(5, 'kA07uc2fGAkQMy4TTHJH3YBeVx5EasIybW3dcMacXJnSdwKOX0IuLBFBKwPJ', 'arshdeep', '25'),
+(6, 'nXCol0COaSAOSqkWPuo1Otgybu0UwR5fTVrTqQ', 'ravjot', '75'),
+(7, 'xUm6Or65PlWhlSFMUu7ltf', 'alexander', '266'),
+(8, 'KTBCJVMxxFojl6okl9AL5', 'hans', '47');
 
 -- --------------------------------------------------------
 
@@ -90,10 +67,10 @@ CREATE TABLE `customer_orders` (
 --
 
 INSERT INTO `customer_orders` (`id`, `order_number`, `name`, `email`, `product`) VALUES
-(1, 150, 'John Smith', '', 'Face wash'),
-(2, 120, 'Maggie Adams', '', 'Vitamin D tablets'),
-(3, 170, 'Matt Edwards', '', 'Body lotion'),
-(4, 2, 'Alison Carlson', 'acarlson@gmail.com', 'After Shave');
+(1, 1, 'John Smith', 'jsmith@mail.org', 'After Shave'),
+(2, 2, 'Maggie Adams', 'madams@gmail.com', 'Daily Skin Care Kit'),
+(3, 3, 'Alison Carlson', 'acarlson@gmail.com', 'Perfume'),
+(4, 4, 'Jason Moore', 'jmoore@gmail.com', 'Face Mask ');
 
 -- --------------------------------------------------------
 
@@ -119,11 +96,12 @@ CREATE TABLE `login_details` (
 --
 
 INSERT INTO `login_details` (`id`, `identifier`, `name`, `email`, `password`, `birth`, `housenumber`, `streetname`, `townname`, `postcode`) VALUES
-(1, '', 'John Smith', 'jsmith@mail.org', 'echo7', '1992-01-01', 22, 'Intern Avenue', 'Camden', 'C22 NL1'),
-(2, '', 'Maggie Adams', 'm.adams@email.com', 'flower19', '0000-00-00', 43, 'Shelby Drive', 'Monton', 'MO3 7BY'),
-(3, '', 'Matt Edwards', 'medwards00@gmail.com', 'builder1@1', '2000-09-11', 1, 'Saint Manny Avenue', 'Boston', 'BU8 3BQ'),
-(4, 'JJOno3l4nI7HFDblFI6RDI8hdQLNzmjvUI4pNPCYsqTq3hy3l', 'Ash Jackson', 'jxash@gmail.com', '123', '1998-11-16', 234, 'Fairway Avenue', 'Birmingham', 'WB9 7LK'),
-(12, 'Inw78ho4V4D0mj46FEscMG9uCrW', 'Alison Carlson', 'acarlson@gmail.com', '1234', '1997-11-18', 123, 'Jamerson Avenue', 'Birmingham', 'BJ5 8JK');
+(1, '2U7RG0ruABM7qdLn3vSOE5SFdXX', 'John Smith', 'jsmith@mail.org', 'echo7', '1992-01-01', 22, 'Intern Avenue', 'Camden', 'C22 NL1'),
+(2, '5lgVWjwPCNCGw87PsuB0D8r5xRa4j480TKx06WNL', 'Maggie Adams', 'madams@gmail.com', 'flower19', '1995-02-05', 43, 'Shelby Drive', 'Monton', 'MO3 7BY'),
+(3, '474utRSI5gKFWSxIQE2sc7', 'Matt Edwards', 'medwards00@gmail.com', 'builder1@1', '2000-09-11', 1, 'Saint Manny Avenue', 'Boston', 'BU8 3BQ'),
+(4, '8j0g8WYAsa4sAkbhjUTlNRvqYXcAD31AXc7fxMG6QW0fNHWlkLekdHE2veVJ', 'Ash Jackson', 'jxash@gmail.com', 'A.Jx1998', '1998-11-16', 234, 'Fairway Avenue', 'Birmingham', 'WB9 7LK'),
+(5, 'hFQIzIPg7Rl86H2G71dIUhxQ0lNgYm130gN', 'Alison Carlson', 'acarlson@gmail.com', 'acarlson.9718', '1997-11-18', 123, 'Jamerson Avenue', 'Birmingham', 'BJ5 8JK'),
+(6, 'NjPgwVD53', 'Jason Moore', 'jmoore@gmail.com', 'Brum1999.31.Moore', '1999-05-31', 678, 'Jacksons Avenue', 'Birmingham', 'IJ6 8JK');
 
 -- --------------------------------------------------------
 
@@ -159,15 +137,9 @@ INSERT INTO `products` (`id`, `product`, `product_description`, `size`, `price`,
 --
 
 --
--- Indexes for table `admin`
+-- Indexes for table `admin_login`
 --
-ALTER TABLE `admin`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `card_details`
---
-ALTER TABLE `card_details`
+ALTER TABLE `admin_login`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -193,16 +165,10 @@ ALTER TABLE `products`
 --
 
 --
--- AUTO_INCREMENT for table `admin`
+-- AUTO_INCREMENT for table `admin_login`
 --
-ALTER TABLE `admin`
+ALTER TABLE `admin_login`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
---
--- AUTO_INCREMENT for table `card_details`
---
-ALTER TABLE `card_details`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `customer_orders`
@@ -214,7 +180,7 @@ ALTER TABLE `customer_orders`
 -- AUTO_INCREMENT for table `login_details`
 --
 ALTER TABLE `login_details`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `products`

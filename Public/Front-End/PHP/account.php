@@ -54,7 +54,7 @@ if (isset($_SESSION['postcode'])) {
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Health Care Website</title>
+        <title>Health Care Website - My Account</title>
 
         <link rel="stylesheet" href="../CSS/style.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
@@ -80,7 +80,7 @@ if (isset($_SESSION['postcode'])) {
             <div class="header-btn">
                 <a href="signUp.php" class="sign-up" id="sign-up">Sign Up</a>
                 <a href="signIn.php" class="sign-in" id="sign-in">Sign In</a>
-                <a href="">Logout</a>
+                <a href="logout.php">Logout</a>
                 <a href="cart.php">Cart</a>                
             </div>
         </header>
@@ -121,10 +121,10 @@ if (isset($_SESSION['postcode'])) {
                 <div class="acc-container">
                     <?php
                     // Reads from the database to show the user their previous orders (NOT WORKING)
-                    $custdetail_query = "SELECT * FROM customer_orders LIMIT 1";
-                    $custdetail_result = $conn -> query($custdetail_query);
+                    $customer_orders = "SELECT * FROM customer_orders LIMIT 1";
+                    $customer_orders_result = $conn -> query($customer_orders);
 
-                    while ($row = $custdetail_result -> fetch_assoc()) {
+                    while ($row = $customer_orders_result -> fetch_assoc()) {
                     ?>
 
                     <table style="width: 100%;">

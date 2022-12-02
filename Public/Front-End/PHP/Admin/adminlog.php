@@ -18,12 +18,12 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_SESSION['admintoken']) && iss
     $arr['password'] = $password;
 
     // Reads from the database to see if the username and password match for the user trying to login
-    $ad_query = "SELECT * FROM admin_login WHERE username = :username && password = :password LIMIT 1";
-    $adm_result = $DBCONNECT->prepare($ad_query);
-    $checker = $adm_result->execute($arr);
+    $admin_login = "SELECT * FROM admin_login WHERE username = :username && password = :password LIMIT 1";
+    $admin_login_result = $DBCONNECT->prepare($admin_login);
+    $checker = $admin_login_result->execute($arr);
 
     if ($checker) {
-      $datafound = $adm_result->fetchALL(PDO::FETCH_OBJ);
+      $datafound = $admin_login_result->fetchALL(PDO::FETCH_OBJ);
 
       if (is_array($datafound) && count($datafound) > 0 ) {
         $datafound = $datafound[0];
@@ -51,7 +51,7 @@ $_SESSION['admintoken'] = adminidentifier(60);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Health Care Website</title>
+    <title>Health Care Website Admin - Sign In</title>
     
     <link rel="stylesheet" href="../../CSS/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
@@ -70,7 +70,6 @@ $_SESSION['admintoken'] = adminidentifier(60);
 
       <div class="header-btn">
         <a href="adminlog.php" class="sign-in" id="sign-in">Sign In</a>
-        <a href="">Logout</a>
       </div>
     </header>
 
@@ -86,7 +85,7 @@ $_SESSION['admintoken'] = adminidentifier(60);
         <input type="text" placeholder="Enter Username" name="username" required>
 
         <label for="password"><b>Password*</b></label>
-        <input type="text" placeholder="Enter Password" name="password" required>
+        <input type="password" placeholder="Enter Password" name="password" required>
 
         <input type="hidden" name="admintoken" value="<?=$_SESSION['admintoken']?>">
 

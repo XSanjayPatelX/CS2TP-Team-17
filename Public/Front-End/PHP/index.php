@@ -37,7 +37,7 @@ require "../../../Private/Back-End/backendcon.php";
             <div class="header-btn">
                 <a href="signUp.php" class="sign-up" id="sign-up">Sign Up</a>
                 <a href="signIn.php" class="sign-in" id="sign-in">Sign In</a>
-                <a href="">Logout</a>
+                <a href="logout.php">Logout</a>
                 <a href="cart.php">Cart</a>
             </div>
         </header>
@@ -87,10 +87,10 @@ require "../../../Private/Back-End/backendcon.php";
             <div class="shop-content">
                 <?php
                 // Query to select product information
-                $sql = "SELECT product, product_description, size, price, images FROM products";
-                $result = $conn->query($sql);
+                $show_products = "SELECT product, product_description, size, price, images FROM products";
+                $show_products_result = $conn->query($show_products);
 
-                while($row = $result->fetch_assoc()) { ?>
+                while($row = $show_products_result->fetch_assoc()) { ?>
                     <!-- Shop - adding products from database to webpage -->
                     <div class="product-box">
                         <table style="width: 100%;">
@@ -166,7 +166,7 @@ require "../../../Private/Back-End/backendcon.php";
                         <img src="../E-Commerce-Designs/Images/sanjay.png" alt="">
                     </div>
                     <h2>Sanjay Patel</h2>
-                    <p>Team leader and backend developer</p>
+                    <p>Team leader and backend developer and helped with frontend too</p>
                 </div>
 
                 <div class="box">
@@ -214,7 +214,7 @@ require "../../../Private/Back-End/backendcon.php";
                         <img src="../E-Commerce-Designs/Images/alex.jpg" alt="">
                     </div>
                     <h2>Alexander Onofrio-Mills</h2>
-                    <p>Back-end developer, for makeing the website functional</p>
+                    <p>Back-end developer, for making the website functional</p>
                 </div>
 
                 <div class="box">

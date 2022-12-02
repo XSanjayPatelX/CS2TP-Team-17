@@ -24,7 +24,7 @@ if (isset($_SESSION['username'])) {
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Health Care Website</title>
+        <title>Health Care Website Admin - Customer Record</title>
 
         <link rel="stylesheet" href="../../CSS/style.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
@@ -37,12 +37,11 @@ if (isset($_SESSION['username'])) {
             <a href="#" class="logo"><img src="../../E-Commerce-Designs/Logos/logo.png" alt=""></a>
             <div class="bx bx-menu" id="menu-icon"></div>
             <ul class="navbar">
-                <li><a href="customerdetails.php">Customers Detials</a></li>
+                <li><a href="customerdetails.php">Customers Details</a></li>
             </ul>
 
             <div class="header-btn">
-                <a href="adminlog.php" class="sign-in" id="sign-in">Sign In</a>
-                <a href="">Logout</a>
+                <a href="logout.php">Logout</a>
             </div>
         </header>
 
@@ -55,10 +54,10 @@ if (isset($_SESSION['username'])) {
                     <form class="profile-form" action="" method="" autocomplete="off">
                         <?php
                         // Query to select the customers details
-                        $sql = "SELECT * FROM login_details";
-                        $result = $conn->query($sql);
+                        $admin_customers_details = "SELECT * FROM login_details";
+                        $admin_customers_details_result = $conn->query($admin_customers_details);
 
-                        while($row = $result->fetch_assoc()) { ?>
+                        while($row = $admin_customers_details_result->fetch_assoc()) { ?>
 
                             <div class="admin-product-box-cust-det">
                                 <table style="width: 900px; border:1px solid white;">
@@ -94,10 +93,10 @@ if (isset($_SESSION['username'])) {
                 <div class="acc-container">
                     <?php
                     // Query to select the customers previous orders
-                    $custdetail_query = "SELECT * FROM customer_orders";
-                    $custdetail_result = $conn -> query($custdetail_query);
+                    $admin_customers_orders = "SELECT * FROM customer_orders";
+                    $admin_customers_orders_result = $conn -> query($admin_customers_orders);
 
-                    while ($row = $custdetail_result -> fetch_assoc()) { ?>
+                    while ($row = $admin_customers_orders_result -> fetch_assoc()) { ?>
                         <div class="admin-product-box-cust-ord">
                             <table style="width: 100%; border:1px solid white">
                                 <div class="input-box">

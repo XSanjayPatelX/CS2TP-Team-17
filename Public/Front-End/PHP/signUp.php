@@ -30,27 +30,27 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
   }
 
   // All fields will be able to use special characters to be added in the database if sign up is successfull
-  $name = specialchar($_POST['name']);
-  $email = specialchar($_POST['email']);
-  $password = specialchar($_POST['password']);
-  $passwordrep = specialchar($_POST['passwordrep']);
-  $birth = specialchar($_POST['birth']);
-  $housenumber = specialchar($_POST['housenumber']);
-  $streetname = specialchar($_POST['streetname']);
-  $townname = specialchar($_POST['townname']);
-  $postcode = specialchar($_POST['postcode']);
+  $name = addslash($_POST['name']);
+  $email = addslash($_POST['email']);
+  $password = addslash($_POST['password']);
+  $passwordrep = addslash($_POST['passwordrep']);
+  $birth = addslash($_POST['birth']);
+  $housenumber = addslash($_POST['housenumber']);
+  $streetname = addslash($_POST['streetname']);
+  $townname = addslash($_POST['townname']);
+  $postcode = addslash($_POST['postcode']);
 
   $identifier = individualidentifier(60);
   
   // This will check if the email address is already in use and the passwords are matching
   $arr = false;
   $arr['email'] = $email;
-  $query = "SELECT * FROM login_details WHERE email = :email LIMIT 1";
-  $statement = $DBCONNECT->prepare($query);
-  $checker = $statement->execute($arr);
+  $email_checker = "SELECT * FROM login_details WHERE email = :email LIMIT 1";
+  $email_checker_result = $DBCONNECT->prepare($email_checker);
+  $checker = $email_checker_result->execute($arr);
 
   if ($checker) {
-    $datafound = $statement->fetchALL(PDO::FETCH_OBJ);
+    $datafound = $email_checker_result->fetchALL(PDO::FETCH_OBJ);
     if (is_array($datafound) && count($datafound) > 0) {
       $error = "This email is already being used by another user.";              
     }
@@ -72,11 +72,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $arr['townname'] = $townname;
     $arr['postcode'] = $postcode;
     
-    $signupquery = "INSERT INTO login_details (identifier, name, email, password, birth, housenumber, streetname, townname, postcode) values (:identifier, :name, :email, :password, :birth, :housenumber, :streetname, :townname, :postcode)";
-    $stm = $DBCONNECT->prepare($signupquery);
-    $stm->execute($arr);
+    $database_input = "INSERT INTO login_details (identifier, name, email, password, birth, housenumber, streetname, townname, postcode) values (:identifier, :name, :email, :password, :birth, :housenumber, :streetname, :townname, :postcode)";
+    $database_input_result = $DBCONNECT->prepare($database_input);
+    $database_input_result->execute($arr);
         
-    header("Location: signin.php");
+    header("Location: signIn.php");
     exit;
   }
 }
@@ -91,7 +91,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Health Care Website</title>
+      <title>Health Care Website - Sign Up</title>
 
       <link rel="stylesheet" href="../CSS/style.css">
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
@@ -115,7 +115,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
       <div class="header-btn">
         <a href="signUp.php" class="sign-up" id="sign-up">Sign Up</a>
         <a href="signIn.php" class="sign-in" id="sign-in">Sign In</a>
-        <a href="">Logout</a>
         <a href="cart.php">Cart</a>                
       </div>
     </header>
